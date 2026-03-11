@@ -1,5 +1,10 @@
-body{
+*{
+box-sizing:border-box;
 margin:0;
+padding:0;
+}
+
+body{
 font-family:Arial;
 background:black;
 color:white;
@@ -10,28 +15,27 @@ color:white;
 .navbar{
 height:60px;
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 padding:0 60px;
 background:black;
 border-bottom:1px solid #222;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-/* LOGO */
-
 .logo{
-font-size:18px;
+font-size:20px;
 font-weight:600;
 letter-spacing:2px;
 cursor:pointer;
-transition:0.3s;
+transition:.3s;
 }
 
 .logo:hover{
 color:#ff4d4d;
 }
-
-/* MENU */
 
 .nav-links{
 display:flex;
@@ -46,8 +50,6 @@ font-size:14px;
 position:relative;
 }
 
-/* underline hover animation */
-
 .nav-links a::after{
 content:"";
 position:absolute;
@@ -56,25 +58,22 @@ bottom:-6px;
 width:0;
 height:2px;
 background:#ff4d4d;
-transition:0.3s;
+transition:.3s;
 }
 
 .nav-links a:hover::after{
 width:100%;
 }
 
-/* ICONS */
-
 .nav-icons{
 display:flex;
 gap:22px;
 font-size:18px;
-align-items:center;
 }
 
 .nav-icons i{
 cursor:pointer;
-transition:0.3s;
+transition:.3s;
 }
 
 .nav-icons i:hover{
@@ -82,78 +81,143 @@ color:#ff4d4d;
 transform:scale(1.15);
 }
 
-
-/* HERO SECTION */
+/* HERO */
 
 .hero{
 display:flex;
-height:85vh;
+height:calc(100vh - 60px);
 overflow:hidden;
+position:relative;
 }
 
-/* PANEL */
+/* PANELS */
 
 .panel{
 flex:1;
-position:relative;
+min-width:80px;
 cursor:pointer;
-transition:0.5s;
 overflow:hidden;
+position:relative;
+transition:flex 0.8s cubic-bezier(.77,0,.18,1);
 }
 
-.panel:hover{
-flex:3;
+/* PANEL EXPAND */
+
+.panel.expand{
+flex:5;
 }
 
-/* ARTIST BACKGROUND */
+/* PANEL GRID */
+
+.panel-inner{
+display:grid;
+grid-template-columns:40% 20% 40%;
+width:100%;
+height:100%;
+align-items:center;
+}
+
+/* TEXT */
+
+.text-side{
+padding:60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+opacity:0;
+transform:translateY(20px);
+transition:all .5s ease;
+}
+
+.panel.expand .text-side{
+opacity:1;
+transform:translateY(0);
+}
+
+.text-side h2{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.price{
+font-size:24px;
+color:#00ff88;
+margin-bottom:20px;
+}
+
+.desc{
+opacity:0.8;
+line-height:1.6;
+max-width:240px;
+}
+
+/* GUITAR */
+
+.guitar-side{
+display:flex;
+align-items:center;
+justify-content:center;
+height:100%;
+}
+.guitar{
+height:70%;
+max-height:520px;
+object-fit:contain;
+transition:transform .6s ease;
+}
+
+.panel.expand .guitar{
+transform:scale(1.15) translateY(-30px);
+}
+
+/* ARTIST */
+
+.artist-side{
+height:100%;
+}
 
 .artist{
 width:100%;
 height:100%;
 object-fit:cover;
-filter:brightness(60%);
-}
-
-/* GUITAR */
-
-.guitar{
-position:absolute;
-top:60%;
-left:50%;
-transform:translate(-50%,-50%);
-width:260px;
-transition:0.6s;
-}
-
-/* INFO TEXT */
-
-.info{
-position:absolute;
-top:60px;
-left:40px;
+object-position:center;
 opacity:0;
-color:white;
-transition:0.5s;
+transition:all .5s ease;
 }
 
-/* PLAY BUTTON */
-
-.play{
-margin-top:10px;
-width:45px;
-height:45px;
-border-radius:50%;
-border:none;
-font-size:18px;
-cursor:pointer;
-}
-
-/* CLICK ANIMATION (ADD THIS AT THE END) */
-
-.panel.active .guitar{
-top:25%;
-}
-
-.panel.active .info{
+.panel.expand .artist{
 opacity:1;
+transform:translateY(0);
 }
+
+/* VERTICAL LABEL */
+
+.label{
+position:absolute;
+left:20px;
+bottom:20px;
+writing-mode:vertical-rl;
+transform:rotate(180deg);
+font-size:14px;
+letter-spacing:3px;
+opacity:.7;
+transition:.4s;
+}
+
+.label span{
+font-size:20px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.panel.expand .label{
+opacity:0;
+}
+
+/* PANEL COLORS */
+
+.panel:nth-child(1){background:#ff2a2a;}
+.panel:nth-child(2){background:#8b3dff;}
+.panel:nth-child(3){background:#2563eb;}
+.panel:nth-child(4){background:#16a34a;}
+.panel:nth-child(5){background:#f59e0b;}
