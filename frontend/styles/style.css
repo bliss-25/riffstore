@@ -1,0 +1,19 @@
+body{
+    margin:0;
+    font-family: Arial;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:black;
+    color:white;
+    padding:15px 40px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
