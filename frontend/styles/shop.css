@@ -1,0 +1,429 @@
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial;
+background:black;
+color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+height:60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 60px;
+background:black;
+border-bottom:1px solid #222;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:20px;
+font-weight:600;
+letter-spacing:2px;
+cursor:pointer;
+transition:.3s;
+}
+
+.logo:hover{
+color:#ff4d4d;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:14px;
+position:relative;
+}
+
+.nav-links a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:2px;
+background:#ff4d4d;
+transition:.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.nav-icons{
+display:flex;
+gap:22px;
+font-size:18px;
+}
+
+.nav-icons i{
+cursor:pointer;
+transition:.3s;
+}
+
+.nav-icons i:hover{
+color:#ff4d4d;
+transform:scale(1.15);
+}
+
+/* SEARCH BAR */
+
+.search-container{
+position:relative;
+display:flex;
+align-items:center;
+}
+
+.search-icon{
+cursor:pointer;
+font-size:18px;
+}
+
+.search-container input{
+width:0;
+opacity:0;
+padding:0;
+border:none;
+background:#111;
+color:white;
+outline:none;
+transition:0.35s ease;
+position:absolute;
+right:30px;
+pointer-events:none;
+}
+
+.search-container.active input{
+width:200px;
+opacity:1;
+padding:8px 12px;
+border:1px solid #333;
+border-radius:6px;
+pointer-events:auto;
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 80px;
+text-align:center;
+}
+
+/* HERO */
+
+.hero{
+height:60vh;
+background:url("../assets/images/shop-banner.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+top:0;
+left:0;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:600px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+/* CATEGORY ICONS */
+
+.category-icons{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.cat-icon{
+text-decoration:none;
+color:white;
+}
+
+.cat-icon img{
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #222;
+transition:.3s;
+}
+
+.cat-icon:hover img{
+border-color:#ff4d4d;
+transform:scale(1.1);
+}
+
+.cat-icon p{
+margin-top:10px;
+font-size:14px;
+}
+
+/* PRODUCTS */
+
+.products{
+padding:80px 40px;
+max-width:1400px;
+margin:auto;
+}
+
+/* PRODUCT GRID */
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+/* PRODUCT CARD */
+
+.product-card{
+background:#0f0f0f;
+border-radius:18px;
+overflow:hidden;
+position:relative;
+transition:.35s;
+border:1px solid rgba(255,255,255,0.05);
+max-width:320px;
+margin:auto;
+}
+
+.product-card:hover{
+transform:translateY(-6px);
+border-color:#ff4d4d;
+box-shadow:0 10px 30px rgba(255,77,77,0.15);
+}
+
+/* WISHLIST */
+
+.wishlist{
+position:absolute;
+top:15px;
+right:15px;
+width:36px;
+height:36px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#111;
+border:1px solid #333;
+cursor:pointer;
+transition:.25s;
+}
+
+.wishlist.active{
+background:#ff4d4d;
+border-color:#ff4d4d;
+}
+
+.wishlist.active i{
+color:white;
+}
+
+/* PRODUCT IMAGE */
+
+.product-img{
+height:180px;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:15px;
+}
+
+.product-img img{
+max-width:100%;
+max-height:100%;
+object-fit:contain;
+transition:.35s;
+}
+
+.product-card:hover .product-img img{
+transform:scale(1.08);
+}
+
+/* PRODUCT INFO */
+
+.product-info{
+padding:20px;
+text-align:left;
+}
+
+.product-info h3{
+font-size:16px;
+margin-bottom:6px;
+}
+
+.price{
+color:#00ff88;
+font-size:18px;
+margin-bottom:6px;
+}
+
+.rating{
+opacity:0.8;
+font-size:14px;
+margin-bottom:5px;
+}
+
+.delivery{
+opacity:0.7;
+font-size:13px;
+margin-bottom:15px;
+}
+
+/* COLOR OPTIONS */
+
+.colors{
+display:flex;
+gap:10px;
+margin-bottom:12px;
+}
+
+.colors span{
+width:16px;
+height:16px;
+border-radius:50%;
+display:inline-block;
+cursor:pointer;
+border:2px solid #333;
+transition:.2s ease;
+}
+
+.colors span:hover{
+transform:scale(1.15);
+border-color:white;
+}
+
+.colors span.active{
+border-color:#ff4d4d;
+transform:scale(1.15);
+}
+
+/* COLOR CLASSES */
+
+.black{background:black;}
+.red{background:red;}
+.white{background:white;}
+.blue{background:#2563eb;}
+.green{background:#16a34a;}
+
+/* DESCRIPTION */
+
+.desc{
+opacity:0.7;
+font-size:14px;
+line-height:1.5;
+margin-bottom:20px;
+}
+
+/* ADD TO CART */
+
+.cart-btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:white;
+color:black;
+font-weight:600;
+cursor:pointer;
+transition:all .3s ease;
+}
+
+.cart-btn:hover{
+background:#ff4d4d;
+color:white;
+}
+
+.cart-btn.added{
+background:#16a34a;
+color:white;
+transform:scale(0.97);
+}
+
+/* IMAGE BANNER */
+
+.promo-banner{
+height:300px;
+background:url("../assets/images/banner.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.promo-banner::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.promo-content{
+position:relative;
+z-index:2;
+}
+
+.promo-content h2{
+font-size:36px;
+}
+
+/* VIDEO */
+
+.video-section{
+position:relative;
+height:400px;
+overflow:hidden;
+}
+
+.video-section video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.video-overlay{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+}
+
+.video-overlay h2{
+font-size:40px;
+}
