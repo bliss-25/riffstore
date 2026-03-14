@@ -32,19 +32,21 @@ searchBox.classList.remove("active");
 
 /* COLOR SELECTION */
 
-const colorOptions = document.querySelectorAll(".colors span");
+const colorGroups = document.querySelectorAll(".colors");
 
-colorOptions.forEach(color => {
+colorGroups.forEach(group => {
 
-color.addEventListener("click",function(){
+const colors = group.querySelectorAll("span");
 
-const parent = this.parentElement;
+colors.forEach(color => {
 
-parent.querySelectorAll("span").forEach(c=>{
-c.classList.remove("active");
-});
+color.addEventListener("click", function(){
+
+colors.forEach(c => c.classList.remove("active"));
 
 this.classList.add("active");
+
+});
 
 });
 
@@ -53,13 +55,23 @@ this.classList.add("active");
 
 /* WISHLIST HEART */
 
-const wishlistButtons = document.querySelectorAll(".wishlist");
+const hearts = document.querySelectorAll(".wishlist");
 
-wishlistButtons.forEach(btn=>{
+hearts.forEach((heart) => {
 
-btn.addEventListener("click",()=>{
+heart.addEventListener("click", () => {
 
-btn.classList.toggle("active");
+const icon = heart.querySelector("i");
+
+heart.classList.toggle("active");
+
+if(icon.classList.contains("fa-regular")){
+icon.classList.remove("fa-regular");
+icon.classList.add("fa-solid");
+}else{
+icon.classList.remove("fa-solid");
+icon.classList.add("fa-regular");
+}
 
 });
 
@@ -83,6 +95,18 @@ this.classList.remove("added");
 this.innerHTML = '<i class="fa-solid fa-bag-shopping"></i> Add to Cart';
 
 },2000);
+
+});
+
+});
+
+const featureCards = document.querySelectorAll(".feature-card");
+
+featureCards.forEach(card => {
+
+card.addEventListener("click", () => {
+
+card.classList.toggle("active");
 
 });
 
