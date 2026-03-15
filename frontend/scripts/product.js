@@ -1,4 +1,4 @@
-/* SEARCH BAR */
+/* SEARCH */
 
 const searchBox = document.getElementById("searchBox");
 const searchIcon = document.querySelector(".search-icon");
@@ -18,6 +18,12 @@ searchInput.focus();
 });
 
 }
+
+document.addEventListener("click", () => {
+searchBox.classList.remove("active");
+});
+
+
 /* IMAGE GALLERY */
 
 const mainImage = document.getElementById("mainImage");
@@ -37,22 +43,40 @@ mainImage.src = thumb.src;
 
 });
 
-/* QUANTITY BUTTONS */
+
+/* QUANTITY */
 
 const plus = document.getElementById("plus");
 const minus = document.getElementById("minus");
 const qty = document.getElementById("qty");
 
-if (plus && minus && qty) {
-
 plus.onclick = () => {
-qty.value = parseInt(qty.value) + 1;
+qty.value = parseInt(qty.value || 1) + 1;
 };
 
 minus.onclick = () => {
-if (qty.value > 1) {
-qty.value = parseInt(qty.value) - 1;
+
+let value = parseInt(qty.value || 1);
+
+if(value > 1){
+qty.value = value - 1;
 }
+
 };
 
-}
+
+/* COLOR SELECT */
+
+const colors = document.querySelectorAll(".color");
+
+colors.forEach(color => {
+
+color.addEventListener("click", () => {
+
+colors.forEach(c => c.classList.remove("active"));
+
+color.classList.add("active");
+
+});
+
+});

@@ -15,12 +15,9 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
 </head>
 
 <body>
-
-
 
 <!-- NAVBAR -->
 
@@ -38,25 +35,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <div class="nav-icons">
 
 <div class="search-container" id="searchBox">
-
 <i class="fa-solid fa-magnifying-glass search-icon"></i>
-
-<input
-type="text"
-id="searchInput"
-placeholder="Search instruments..."
->
-
+<input type="text" id="searchInput" placeholder="Search instruments...">
 </div>
 
-<i class="fa-solid fa-user"></i>
-<i class="fa-solid fa-bag-shopping"></i>
-<i class="fa-regular fa-heart"></i>
+<i class="fa-solid fa-user"></i> <i class="fa-solid fa-bag-shopping"></i> <i class="fa-regular fa-heart"></i>
 
 </div>
 
 </nav>
-
 
 <!-- PRODUCT SECTION -->
 
@@ -66,13 +53,15 @@ placeholder="Search instruments..."
 
 <div class="product-gallery">
 
-<img id="mainImage" src="../assets/images/guitar1.jpg" class="main-img">
+<div class="main-image-wrapper">
+<img id="mainImage" src="../assets/image/samp5.jpg" class="main-img">
+</div>
 
 <div class="thumbnail-row">
-<img src="../assets/image/guitar2.png" class="thumb active">
-<img src="../assets/image/guitar3.png" class="thumb">
-<img src="../assets/image/guitar4.png" class="thumb">
-<img src="../assets/image/guitar5.png" class="thumb">
+<img src="../assets/image/samp1.jpg" class="thumb active">
+<img src="../assets/image/samp2.jpg" class="thumb">
+<img src="../assets/image/samp3.jpg" class="thumb">
+<img src="../assets/image/samp4.jpg" class="thumb">
 </div>
 
 </div>
@@ -85,15 +74,14 @@ placeholder="Search instruments..."
 
 <div class="rating">
 <span class="stars">⭐⭐⭐⭐⭐</span>
-<span class="reviews">(128 Reviews)</span>
+<span class="reviews">4.8 (128 Reviews)</span>
 </div>
 
 <p class="price">₹79,999</p>
 
 <p class="description">
-The Fender Stratocaster is one of the most iconic electric guitars ever made.
-Perfect for rock, blues, and modern music styles. Designed for beginners
-and professional musicians alike.
+One of the most iconic electric guitars ever made. Designed for rock,
+blues, and modern music styles. Ideal for beginners and professional musicians.
 </p>
 
 <!-- COLOR OPTIONS -->
@@ -103,6 +91,7 @@ and professional musicians alike.
 <h3>Color</h3>
 
 <div class="colors">
+
 <span class="color black"></span>
 <span class="color red"></span>
 <span class="color white"></span>
@@ -113,9 +102,9 @@ and professional musicians alike.
 <!-- QUANTITY -->
 
 <div class="quantity">
-
-<button id="minus">-</button> <input type="text" id="qty" value="1"> <button id="plus">+</button>
-
+<button id="minus">-</button>
+<input type="text" id="qty" value="1">
+<button id="plus">+</button>
 </div>
 
 <!-- BUTTONS -->
@@ -159,36 +148,154 @@ Buy Now
 
 </section>
 
-<!-- PRODUCT DESCRIPTION -->
+<!-- ABOUT THIS ITEM -->
+
+<section class="about-item">
+
+<h2>About this item</h2>
+
+<ul>
+
+<li>Premium basswood body provides warm and balanced tone.</li>
+<li>Maple neck and smooth fretboard allow comfortable playing.</li>
+<li>Vintage tremolo bridge for expressive pitch control.</li>
+<li>Three single-coil pickups deliver classic Strat sound.</li>
+<li>Perfect for rock, blues, jazz and modern music.</li>
+
+</ul>
+
+</section>
+
+<!-- PRODUCT FEATURES -->
 
 <section class="product-description">
 
-<h2>Product Description</h2>
+<h2>Product Features</h2>
 
 <div class="description-grid">
 
 <div class="desc-item">
-<h3>Quality Wood</h3>
-<p>
-A premium basswood body offers warm and rich tones that enhance every
-performance. The carefully selected wood improves durability and resonance.
-</p>
+<h3>Premium Wood Body</h3>
+<p>High quality basswood body ensures rich tone and long sustain.</p>
 </div>
 
 <div class="desc-item">
-<h3>Precise Tuning Pegs</h3>
-<p>
-Smooth tuning pegs allow quick adjustments and ensure the guitar stays
-perfectly tuned during long practice sessions.
-</p>
+<h3>Smooth Neck</h3>
+<p>Comfortable maple neck allows easy playing for beginners.</p>
 </div>
 
 <div class="desc-item">
-<h3>Firm Neck Joint</h3>
-<p>
-A strong neck joint improves stability and ensures the guitar performs
-reliably for years of playing.
-</p>
+<h3>Classic Sound</h3>
+<p>Three single-coil pickups produce iconic Stratocaster tone.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCT INFORMATION -->
+
+<section class="product-info-table">
+
+<h2>Product Information</h2>
+
+<div class="info-grid">
+
+<div class="info-column">
+
+<h3>Technical Details</h3>
+
+<div class="info-row">
+<span>Body Material</span>
+<span>Basswood</span>
+</div>
+
+<div class="info-row">
+<span>Neck Material</span>
+<span>Maple</span>
+</div>
+
+<div class="info-row">
+<span>Fingerboard</span>
+<span>Rosewood</span>
+</div>
+
+<div class="info-row">
+<span>Number of Strings</span>
+<span>6</span>
+</div>
+
+<div class="info-row">
+<span>Pickup Type</span>
+<span>Single Coil</span>
+</div>
+
+</div>
+
+<div class="info-column">
+
+<h3>Additional Information</h3>
+
+<div class="info-row">
+<span>Brand</span>
+<span>Fender</span>
+</div>
+
+<div class="info-row">
+<span>Model</span>
+<span>Stratocaster</span>
+</div>
+
+<div class="info-row">
+<span>Warranty</span>
+<span>2 Years</span>
+</div>
+
+<div class="info-row">
+<span>Country of Origin</span>
+<span>USA</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CUSTOMER REVIEWS -->
+
+<section class="reviews">
+
+<h2>Customer Reviews</h2>
+
+<div class="review-summary">
+
+<div class="rating-big">
+<span class="score">4.8</span>
+<span class="stars">★★★★★</span>
+<p>Based on 128 Reviews</p>
+</div>
+
+</div>
+
+<div class="review-list">
+
+<div class="review-card">
+<strong>Rahul Sharma</strong>
+<span class="review-stars">★★★★★</span>
+<p>Amazing guitar. The tone and build quality are fantastic.</p>
+</div>
+
+<div class="review-card">
+<strong>Ananya Patel</strong>
+<span class="review-stars">★★★★☆</span>
+<p>Very comfortable neck and great sound. Perfect for beginners.</p>
+</div>
+
+<div class="review-card">
+<strong>Rohit Singh</strong>
+<span class="review-stars">★★★★★</span>
+<p>Classic Stratocaster tone. Worth every rupee.</p>
 </div>
 
 </div>
@@ -204,25 +311,25 @@ reliably for years of playing.
 <div class="product-grid">
 
 <div class="product-card">
-<img src="../assets/image/guitar2.jpg">
+<img src="../assets/image/samp1.jpg">
 <h4>Ibanez RG</h4>
 <p>₹69,999</p>
 </div>
 
 <div class="product-card">
-<img src="../assets/image/guitar3.jpg">
+<img src="../assets/image/sample.jpg">
 <h4>PRS SE Custom</h4>
 <p>₹84,999</p>
 </div>
 
 <div class="product-card">
-<img src="../assets/image/guitar4.jpg">
+<img src="../assets/image/samp2.jpg">
 <h4>Yamaha Pacifica</h4>
 <p>₹39,999</p>
 </div>
 
 <div class="product-card">
-<img src="../assets/image/guitar5.jpg">
+<img src="../assets/image/samp3.jpg">
 <h4>Epiphone Les Paul</h4>
 <p>₹59,999</p>
 </div>
@@ -230,6 +337,100 @@ reliably for years of playing.
 </div>
 
 </section>
+</section>
+
+<section class="promo-banner">
+
+<div class="promo-content">
+<h2>Discover More Instruments</h2>
+<p>Find the perfect guitar, gear, and lessons to elevate your music journey.</p>
+
+<a href="shop.html" class="promo-btn">Shop Now</a>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- BRAND -->
+
+<div class="footer-col">
+<h3>RIFFSTORE</h3>
+<p>
+Discover instruments, studio gear, and lessons designed
+for musicians of every level — from beginners to stage performers.
+</p>
+</div>
+
+<!-- INSTRUMENTS -->
+
+<div class="footer-col">
+<h4>Instruments</h4>
+<ul>
+<li><a href="#">Electric Guitars</a></li>
+<li><a href="#">Acoustic Guitars</a></li>
+<li><a href="#">Bass Guitars</a></li>
+<li><a href="#">Drums & Percussion</a></li>
+<li><a href="#">Keyboards & Pianos</a></li>
+<li><a href="#">Synthesizers</a></li>
+<li><a href="#">Ukuleles</a></li>
+</ul>
+</div>
+
+<!-- GEAR -->
+
+<div class="footer-col">
+<h4>Gear</h4>
+<ul>
+<li><a href="#">Amplifiers</a></li>
+<li><a href="#">Effects Pedals</a></li>
+<li><a href="#">Audio Interfaces</a></li>
+<li><a href="#">Studio Monitors</a></li>
+<li><a href="#">Microphones</a></li>
+<li><a href="#">Headphones</a></li>
+<li><a href="#">Cables & Accessories</a></li>
+</ul>
+</div>
+
+<!-- SUPPORT -->
+
+<div class="footer-col">
+<h4>Support</h4>
+<ul>
+<li><a href="#">Contact Us</a></li>
+<li><a href="#">Shipping Info</a></li>
+<li><a href="#">Returns</a></li>
+<li><a href="#">Warranty</a></li>
+<li><a href="#">Track Order</a></li>
+<li><a href="#">FAQs</a></li>
+</ul>
+</div>
+
+<!-- FOLLOW -->
+
+<div class="footer-col">
+<h4>Follow Us</h4>
+
+<div class="social-icons">
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-youtube"></i>
+<i class="fa-brands fa-x-twitter"></i>
+<i class="fa-brands fa-facebook"></i>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 RiffStore. Built for musicians.</p>
+</div>
+
+</footer>
 
 <script src="../scripts/product.js"></script>
 
