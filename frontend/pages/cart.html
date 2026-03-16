@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Your Cart | RIFFSTORE</title>
+
+<link rel="stylesheet" href="../styles/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">RIFFSTORE</div>
+
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+<li><a href="shop.html">Shop</a></li>
+</ul>
+
+<div class="nav-icons">
+
+<div class="cart-icon">
+<i class="fa-solid fa-bag-shopping"></i>
+<span id="cart-count">0</span>
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- CART SECTION -->
+
+<section class="cart-page">
+
+<h1>Your Cart</h1>
+
+<div id="cart-items"></div>
+
+<div class="cart-summary">
+
+<h2>Total: <span id="cart-total">₹0</span></h2>
+
+<button class="checkout-btn">
+Proceed To Checkout
+</button>
+
+</div>
+
+</section>
+
+
+<script src="../scripts/products.js"></script>
+<script src="../scripts/cart.js"></script>
+
+</body>
+</html>

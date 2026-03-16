@@ -39,7 +39,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <input type="text" id="searchInput" placeholder="Search instruments...">
 </div>
 
-<i class="fa-solid fa-user"></i> <i class="fa-solid fa-bag-shopping"></i> <i class="fa-regular fa-heart"></i>
+<i class="fa-solid fa-user"></i>
+
+<div class="cart-icon" onclick="window.location.href='cart.html'">
+<i class="fa-solid fa-bag-shopping"></i>
+<span id="cart-count">0</span>
+</div>
+
+<i class="fa-regular fa-heart"></i>
 
 </div>
 
@@ -70,16 +77,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <div class="product-info">
 
-<h1>Fender Stratocaster Electric Guitar</h1>
+<h1 class="product-title">Fender Stratocaster Electric Guitar</h1>
 
 <div class="rating">
 <span class="stars">⭐⭐⭐⭐⭐</span>
 <span class="reviews">4.8 (128 Reviews)</span>
 </div>
 
-<p class="price">₹79,999</p>
+<p class="price product-price">₹79,999</p>
 
-<p class="description">
+<p class="description product-desc">
 One of the most iconic electric guitars ever made. Designed for rock,
 blues, and modern music styles. Ideal for beginners and professional musicians.
 </p>
@@ -111,7 +118,7 @@ blues, and modern music styles. Ideal for beginners and professional musicians.
 
 <div class="buttons">
 
-<button class="add-cart">
+<button class="add-cart" onclick="addToCartFromProduct()">
 <i class="fa-solid fa-cart-shopping"></i>
 Add To Cart
 </button>
@@ -432,6 +439,7 @@ for musicians of every level — from beginners to stage performers.
 
 </footer>
 
+<script src="../scripts/products.js"></script>
 <script src="../scripts/product.js"></script>
 
 </body>

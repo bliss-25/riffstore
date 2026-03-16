@@ -255,6 +255,10 @@ border-radius:50%;
 cursor:pointer;
 border:2px solid #444;
 transition:.25s;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .color:hover{

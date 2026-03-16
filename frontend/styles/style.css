@@ -755,3 +755,19 @@ border-top:1px solid #222;
 opacity:.6;
 font-size:14px;
 }
+
+.cart-icon{
+position:relative;
+display:inline-block;
+}
+
+#cart-count{
+position:absolute;
+top:-6px;
+right:-10px;
+background:#ff3b3b;
+color:white;
+font-size:12px;
+padding:2px 6px;
+border-radius:50%;
+}

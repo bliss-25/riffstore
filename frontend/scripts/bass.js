@@ -1,3 +1,9 @@
+
+
+const bassProducts = products.filter(
+product => product.category === "bass"
+);
+
 /* SEARCH BAR EXPAND */
 
 const searchIcon = document.querySelector(".search-icon");

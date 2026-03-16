@@ -1,3 +1,8 @@
+const drumProducts = products.filter(
+product => product.category === "keyboard"
+);
+
+
 /* SEARCH BAR EXPAND */
 
 const searchIcon = document.querySelector(".search-icon");

@@ -46,12 +46,20 @@ placeholder="Search instruments..."
 </div>
 
 <i class="fa-solid fa-user"></i>
+
+<div class="cart-icon" onclick="window.location.href='cart.html'">
 <i class="fa-solid fa-bag-shopping"></i>
+<span id="cart-count">0</span>
+</div>
+
 <i class="fa-regular fa-heart"></i>
 
 </div>
 
 </nav>
+<button onclick="localStorage.clear(); location.reload();" style="position:fixed;top:80px;right:20px;z-index:999;">
+Reset Cart
+</button>
 
 <!-- HERO -->
 
@@ -77,27 +85,27 @@ Find the perfect instrument for your music journey.
 <div class="category-icons">
 
 <a href="electric.html" class="cat-icon">
-<img src="../assets/images/electric.jpg">
+<img src="../assets/image/electric.jpg">
 <p>Electric</p>
 </a>
 
 <a href="bass.html" class="cat-icon">
-<img src="../assets/images/bass.jpg">
+<img src="../assets/image/bass.jpg">
 <p>Bass</p>
 </a>
 
 <a href="acoustic.html" class="cat-icon">
-<img src="../assets/images/acoustic.jpg">
+<img src="../assets/image/acoustic.jpg">
 <p>Acoustic</p>
 </a>
 
 <a href="drums.html" class="cat-icon">
-<img src="../assets/images/drums.jpg">
+<img src="../assets/image/drums.jpg">
 <p>Drums</p>
 </a>
 
 <a href="keyboard.html" class="cat-icon">
-<img src="../assets/images/keyboard.jpg">
+<img src="../assets/image/keyboard.jpg">
 <p>Keys</p>
 </a>
 
@@ -105,563 +113,13 @@ Find the perfect instrument for your music journey.
 
 </section>
 
-<!-- FEATURED PRODUCTS -->
-
 <section class="products">
 
 <h2>Featured Instruments</h2>
 
 <div class="product-grid">
 
-<!-- PRODUCT CARD -->
-
-<div class="product-card">
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/image/sample.jpg" alt="Electric Guitar">
-</div>
-
-<div class="product-info">
-
-<h3>Fender Stratocaster</h3>
-<p class="price">₹24,999</p>
-<p class="rating">★★★★☆ (124)</p>
-<p class="delivery">Free Delivery • Delivered Sunday</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="red"></span>
-<span class="white"></span>
-</div>
-
-<p class="desc">Classic electric guitar with smooth maple neck.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-<!-- PRODUCT 2 -->
-
-<div class="product-card">
- <div class="offer-tag">10% OFF</div>
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar2.png">
-</div>
-
-<div class="product-info">
-
-<h3>Ibanez GRX40</h3>
-<p class="price">₹18,499</p>
-<p class="rating">★★★★☆ (93)</p>
-<p class="delivery">Free Delivery • Delivered Monday</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="blue"></span>
-</div>
-
-<p class="desc">Lightweight guitar with powerful pickups.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-<!-- PRODUCT 3 -->
-
-<div class="product-card">
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar3.png">
-</div>
-
-<div class="product-info">
-
-<h3>Gibson Les Paul</h3>
-<p class="price">₹54,999</p>
-<p class="rating">★★★★★ (210)</p>
-<p class="delivery">Free Delivery • Delivered Sunday</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="red"></span>
-</div>
-
-<p class="desc">Legendary sustain and powerful sound.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-<!-- PRODUCT 4 -->
-
-<div class="product-card">
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar4.png">
-</div>
-
-<div class="product-info">
-
-<h3>Fender Telecaster</h3>
-<p class="price">₹29,999</p>
-<p class="rating">★★★★☆ (88)</p>
-<p class="delivery">Free Delivery • Delivered Sunday</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="white"></span>
-</div>
-
-<p class="desc">Bright tone with classic Fender feel.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-<!-- PRODUCT 5 -->
-
-<div class="product-card">
-
-<div class="offer-tag">20% OFF</div>
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar5.png">
-</div>
-
-<div class="product-info">
-
-<h3>Ibanez RG Series</h3>
-<p class="price">₹24,999</p>
-<p class="rating">★★★★☆ (72)</p>
-<p class="delivery">Free Delivery</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="red"></span>
-</div>
-
-<p class="desc">Fast neck perfect for rock and metal.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- PRODUCT 6 -->
-
-<div class="product-card">
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar6.png">
-</div>
-
-<div class="product-info">
-
-<h3>PRS SE Custom</h3>
-<p class="price">₹34,999</p>
-<p class="rating">★★★★★ (105)</p>
-<p class="delivery">Early Delivery • Delivered Tomorrow</p>
-
-<div class="colors">
-<span class="blue"></span>
-<span class="black"></span>
-</div>
-
-<p class="desc">Premium sound with stunning finish.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- PRODUCT 7 -->
-
-<div class="product-card">
-
-<div class="offer-tag">31% OFF</div>
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar7.png">
-</div>
-
-<div class="product-info">
-
-<h3>Yamaha Pacifica</h3>
-<p class="price">₹18,999</p>
-<p class="rating">★★★★☆ (61)</p>
-<p class="delivery">Free Delivery</p>
-
-<div class="colors">
-<span class="white"></span>
-<span class="black"></span>
-</div>
-
-<p class="desc">Perfect beginner electric guitar.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- PRODUCT 8 -->
-
-<div class="product-card">
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar8.png">
-</div>
-
-<div class="product-info">
-
-<h3>Gretsch Electromatic</h3>
-<p class="price">₹39,999</p>
-<p class="rating">★★★★★ (92)</p>
-<p class="delivery">Early Delivery • Delivered Tomorrow</p>
-
-<div class="colors">
-<span class="orange"></span>
-<span class="black"></span>
-</div>
-
-<p class="desc">Vintage style hollow body tone.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-<!-- PRODUCT 9 -->
-
-<div class="product-card">
-
-<div class="offer-tag">50% OFF</div>
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar9.png">
-</div>
-
-<div class="product-info">
-
-<h3>Squier Stratocaster</h3>
-<p class="price">₹14,999</p>
-<p class="rating">★★★★☆ (118)</p>
-<p class="delivery">Free Delivery</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="white"></span>
-</div>
-
-<p class="desc">Classic strat tone for beginners.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- PRODUCT 10 -->
-
-<div class="product-card">
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar10.png">
-</div>
-
-<div class="product-info">
-
-<h3>Epiphone Les Paul</h3>
-<p class="price">₹28,999</p>
-<p class="rating">★★★★★ (140)</p>
-<p class="delivery">Early Delivery • Delivered Tomorrow</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="gold"></span>
-</div>
-
-<p class="desc">Legendary rock tone and sustain.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- PRODUCT 11 -->
-
-<div class="product-card">
-
-<div class="offer-tag">20% OFF</div>
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar11.png">
-</div>
-
-<div class="product-info">
-
-<h3>Jackson JS Series</h3>
-<p class="price">₹21,999</p>
-<p class="rating">★★★★☆ (74)</p>
-<p class="delivery">Free Delivery</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="red"></span>
-</div>
-
-<p class="desc">Aggressive metal tone guitar.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- PRODUCT 12 -->
-
-<div class="product-card">
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar12.png">
-</div>
-
-<div class="product-info">
-
-<h3>ESP LTD EC-256</h3>
-<p class="price">₹32,999</p>
-<p class="rating">★★★★★ (83)</p>
-<p class="delivery">Free Delivery</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="white"></span>
-</div>
-
-<p class="desc">Modern rock guitar with strong sustain.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-<!-- PRODUCT 13 -->
-
-<div class="product-card">
-
-<div class="offer-tag">31% OFF</div>
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar13.png">
-</div>
-
-<div class="product-info">
-
-<h3>Schecter Omen Extreme</h3>
-<p class="price">₹26,999</p>
-<p class="rating">★★★★☆ (69)</p>
-<p class="delivery">Free Delivery</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="red"></span>
-</div>
-
-<p class="desc">Great guitar for heavy styles.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- PRODUCT 14 -->
-
-<div class="product-card">
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar14.png">
-</div>
-
-<div class="product-info">
-
-<h3>Music Man Cutlass</h3>
-<p class="price">₹41,999</p>
-<p class="rating">★★★★★ (91)</p>
-<p class="delivery">Early Delivery • Delivered Tomorrow</p>
-
-<div class="colors">
-<span class="white"></span>
-<span class="blue"></span>
-</div>
-
-<p class="desc">Premium tone with modern comfort.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- PRODUCT 15 -->
-
-<div class="product-card">
-
-<div class="offer-tag">10% OFF</div>
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar15.png">
-</div>
-
-<div class="product-info">
-
-<h3>Dean ML Series</h3>
-<p class="price">₹23,999</p>
-<p class="rating">★★★★☆ (58)</p>
-<p class="delivery">Free Delivery</p>
-
-<div class="colors">
-<span class="black"></span>
-<span class="silver"></span>
-</div>
-
-<p class="desc">Bold design with powerful pickups.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- PRODUCT 16 -->
-
-<div class="product-card">
-
-<div class="wishlist">
-<i class="fa-regular fa-heart"></i>
-</div>
-
-<div class="product-img">
-<img src="../assets/images/guitar16.png">
-</div>
-
-<div class="product-info">
-
-<h3>Charvel Pro-Mod</h3>
-<p class="price">₹36,999</p>
-<p class="rating">★★★★★ (77)</p>
-<p class="delivery">Free Delivery</p>
-
-<div class="colors">
-<span class="blue"></span>
-<span class="black"></span>
-</div>
-
-<p class="desc">Shred-ready performance guitar.</p>
-
-<button class="cart-btn" type="button">
-<i class="fa-solid fa-bag-shopping"></i> Add to Cart
-</button>
-
-</div>
-</div>
+<!-- Products will load dynamically here -->
 
 </div>
 
@@ -677,7 +135,7 @@ Find the perfect instrument for your music journey.
 
 <div class="artist-card">
 
-<img src="../assets/images/artist1.jpg" alt="Slash">
+<img src="../assets/image/artist1.jpg" alt="Slash">
 
 <div class="artist-info">
 <h3>Slash</h3>
@@ -689,7 +147,7 @@ Find the perfect instrument for your music journey.
 
 <div class="artist-card">
 
-<img src="../assets/images/artist2.jpg" alt="John Mayer">
+<img src="../assets/image/artist2.jpg" alt="John Mayer">
 
 <div class="artist-info">
 <h3>John Mayer</h3>
@@ -701,7 +159,7 @@ Find the perfect instrument for your music journey.
 
 <div class="artist-card">
 
-<img src="../assets/images/artist3.jpg" alt="Steve Vai">
+<img src="../assets/image/artist3.jpg" alt="Steve Vai">
 
 <div class="artist-info">
 <h3>Steve Vai</h3>
@@ -858,6 +316,7 @@ for musicians of every level — from beginners to stage performers.
 </footer>
 
 
+<script src="../scripts/products.js"></script>
 <script src="../scripts/shop.js"></script>
 
 </body>

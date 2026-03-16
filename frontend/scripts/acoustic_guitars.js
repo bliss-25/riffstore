@@ -1,3 +1,8 @@
+const drumProducts = products.filter(
+product => product.category === "acostic_guitar"
+);
+
+
 /* SEARCH BAR EXPAND */
 
 const searchIcon = document.querySelector(".search-icon");
