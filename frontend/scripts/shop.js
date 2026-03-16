@@ -42,9 +42,28 @@ const grid = document.querySelector(".product-grid");
 
 if (grid) {
 
-products.forEach(product => {
+/* ===============================
+CATEGORY FILTER
+================================ */
+
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
+
+let filteredProducts = products;
+
+if(category){
+filteredProducts = products.filter(p => p.category === category);
+}
+
+
+/* ===============================
+RENDER PRODUCTS
+================================ */
+
+filteredProducts.forEach(product => {
 
 grid.innerHTML += `
+
 <div class="product-card" onclick="openProduct(${product.id})">
 
 ${product.offer ? `<div class="offer-tag">${product.offer}</div>` : ""}
@@ -80,13 +99,14 @@ ${product.colors.map(color => `<span class="${color}"></span>`).join("")}
 </div>
 
 </div>
+
 `;
 
 });
 
 
 /* ===============================
-ACTIVATE COLOR SELECTION
+COLOR SELECTION
 ================================ */
 
 document.querySelectorAll(".colors").forEach(group => {
@@ -95,10 +115,11 @@ const colors = group.querySelectorAll("span");
 
 colors.forEach(color => {
 
-color.addEventListener("click", function () {
+color.addEventListener("click", function (e) {
+
+e.stopPropagation();
 
 colors.forEach(c => c.classList.remove("active"));
-
 this.classList.add("active");
 
 });
@@ -114,7 +135,9 @@ WISHLIST HEART
 
 document.querySelectorAll(".wishlist").forEach((heart) => {
 
-heart.addEventListener("click", () => {
+heart.addEventListener("click", (e) => {
+
+e.stopPropagation();
 
 const icon = heart.querySelector("i");
 
@@ -149,7 +172,7 @@ setTimeout(() => {
 this.classList.remove("added");
 this.innerHTML = '<i class="fa-solid fa-bag-shopping"></i> Add to Cart';
 
-}, 2000);
+},1500);
 
 });
 
@@ -219,6 +242,5 @@ cartCount.innerText = count;
 }
 
 }
-
 
 updateCartCount();

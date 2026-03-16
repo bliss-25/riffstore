@@ -33,7 +33,11 @@ cartItems.innerHTML += `
 
 <p>${product.price}</p>
 
-<p>Qty: ${item.qty}</p>
+<div class="cart-qty">
+<button onclick="changeQty(${product.id}, -1)">-</button>
+<span>${item.qty}</span>
+<button onclick="changeQty(${product.id}, 1)">+</button>
+</div>
 
 </div>
 
@@ -70,6 +74,33 @@ location.reload();
 
 
 /* ===============================
+CHANGE QUANTITY
+================================ */
+
+function changeQty(id, change){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let item = cart.find(p => p.id === id);
+
+if(item){
+
+item.qty += change;
+
+if(item.qty <= 0){
+cart = cart.filter(p => p.id !== id);
+}
+
+}
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+location.reload();
+
+}
+
+
+/* ===============================
 UPDATE CART COUNT
 ================================ */
 
@@ -79,12 +110,8 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 let count = 0;
 
-cart.forEach(item => {
-
-if(item.qty){
+cart.forEach(item=>{
 count += Number(item.qty);
-}
-
 });
 
 const cartCount = document.getElementById("cart-count");
@@ -94,4 +121,5 @@ cartCount.innerText = count;
 }
 
 }
+
 updateCartCount();

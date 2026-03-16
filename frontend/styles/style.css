@@ -771,3 +771,42 @@ font-size:12px;
 padding:2px 6px;
 border-radius:50%;
 }
+
+/* CART PAGE */
+
+.cart-item{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#111;
+padding:15px;
+margin-bottom:12px;
+border-radius:8px;
+border:1px solid #222;
+}
+
+.cart-info{
+flex:1;
+margin-left:20px;
+}
+
+.cart-qty{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:6px;
+}
+
+.cart-qty button{
+width:30px;
+height:30px;
+border:none;
+background:#222;
+color:white;
+cursor:pointer;
+border-radius:4px;
+}
+
+.cart-qty button:hover{
+background:#ff4d4d;
+}
