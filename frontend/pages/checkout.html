@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | RIFFSTORE</title>
+
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/cart.css">
+  <link rel="stylesheet" href="../styles/checkout.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">RIFFSTORE</div>
+  </nav>
+
+  <div class="layout">
+
+    <!-- LEFT: USER FORM -->
+    <div class="checkout-form">
+
+      <h2>Shipping Details</h2>
+
+      <input type="text" placeholder="Full Name" id="name">
+      <input type="text" placeholder="Address" id="address">
+      <input type="text" placeholder="City" id="city">
+      <input type="text" placeholder="Pincode" id="pincode">
+
+      <button onclick="placeOrder()">Place Order</button>
+
+    </div>
+
+    <!-- RIGHT: ORDER SUMMARY -->
+    <div class="cart-panel">
+
+      <h2>Order Summary</h2>
+
+      <div id="orderItems"></div>
+
+      <h3>Total: ₹<span id="orderTotal">0</span></h3>
+
+    </div>
+
+  </div>
+
+  <script src="../scripts/checkout.js"></script>
+
+</body>
+</html>

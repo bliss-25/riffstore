@@ -50,3 +50,4 @@ video.classList.remove("fade");  // fade back in
 },12000); // time before switching video
 
 }
+console.log(searchBox, searchIcon, searchInput);

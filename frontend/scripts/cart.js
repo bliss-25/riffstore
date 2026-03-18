@@ -1,75 +1,69 @@
 /* ===============================
-LOAD CART ITEMS
+LOAD CART
 ================================ */
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-const cartItems = document.getElementById("cart-items");
-const cartTotal = document.getElementById("cart-total");
-
-let total = 0;
-
-cartItems.innerHTML = "";
-
-cart.forEach(item => {
-
-const product = products.find(p => p.id == item.id);
-
-if(product){
-
-let price = parseInt(product.price.replace(/[₹,]/g,""));
-
-total += price * item.qty;
-
-cartItems.innerHTML += `
-
-<div class="cart-item">
-
-<img src="${product.image}" width="80">
-
-<div class="cart-info">
-
-<h3>${product.name}</h3>
-
-<p>${product.price}</p>
-
-<div class="cart-qty">
-<button onclick="changeQty(${product.id}, -1)">-</button>
-<span>${item.qty}</span>
-<button onclick="changeQty(${product.id}, 1)">+</button>
-</div>
-
-</div>
-
-<button onclick="removeItem(${product.id})">
-Remove
-</button>
-
-</div>
-
-`;
-
-}
-
-});
-
-cartTotal.innerText = "₹" + total.toLocaleString();
 
 
 /* ===============================
-REMOVE ITEM
+ELEMENTS
 ================================ */
 
-function removeItem(id){
+const cartContent = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
+const cartCount = document.getElementById("cartCount");
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-cart = cart.filter(item => item.id !== id);
+/* ===============================
+RENDER CART
+================================ */
 
-localStorage.setItem("cart", JSON.stringify(cart));
+function renderCart() {
 
-location.reload();
+  cartContent.innerHTML = "";
 
+  if (cart.length === 0) {
+    cartContent.innerHTML = "<p>Your cart is empty</p>";
+    cartTotal.innerText = 0;
+    cartCount.innerText = 0;
+    return;
+  }
+
+  let total = 0;
+  let count = 0;
+
+  cart.forEach((item, index) => {
+
+    total += item.price * item.qty;
+    count += item.qty;
+
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+
+    div.innerHTML = `
+      <img src="${item.image || '../assets/image/guitar1.png'}">
+
+      <div class="cart-info">
+        <h4>${item.name || "Unknown"}</h4>
+        <p>₹${(item.price || 0).toLocaleString()}</p>
+
+        <div class="cart-qty">
+          <button onclick="changeQty(${index}, -1)">-</button>
+          <span>${item.qty}</span>
+          <button onclick="changeQty(${index}, 1)">+</button>
+        </div>
+      </div>
+
+      <button class="remove-btn" onclick="removeItem(${index})">🗑</button>
+    `;
+
+    cartContent.appendChild(div);
+  });
+
+  cartTotal.innerText = total.toLocaleString();
+  cartCount.innerText = count;
+
+  updateCartCount(); // 🔥 sync navbar
 }
 
 
@@ -77,49 +71,53 @@ location.reload();
 CHANGE QUANTITY
 ================================ */
 
-function changeQty(id, change){
+function changeQty(index, change) {
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart[index].qty += change;
 
-let item = cart.find(p => p.id === id);
+  if (cart[index].qty <= 0) {
+    cart.splice(index, 1);
+  }
 
-if(item){
-
-item.qty += change;
-
-if(item.qty <= 0){
-cart = cart.filter(p => p.id !== id);
-}
-
-}
-
-localStorage.setItem("cart", JSON.stringify(cart));
-
-location.reload();
-
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
 }
 
 
 /* ===============================
-UPDATE CART COUNT
+REMOVE ITEM
 ================================ */
 
-function updateCartCount(){
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-let count = 0;
-
-cart.forEach(item=>{
-count += Number(item.qty);
-});
-
-const cartCount = document.getElementById("cart-count");
-
-if(cartCount){
-cartCount.innerText = count;
+function removeItem(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
 }
 
+
+/* ===============================
+UPDATE NAVBAR COUNT
+================================ */
+
+function updateCartCount() {
+
+  let count = 0;
+
+  cart.forEach(item => {
+    count += item.qty;
+  });
+
+  const navCount = document.getElementById("cartCount");
+
+  if (navCount) {
+    navCount.innerText = count;
+  }
 }
 
+
+/* ===============================
+INIT
+================================ */
+
+renderCart();
 updateCartCount();

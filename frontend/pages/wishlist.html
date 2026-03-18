@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wishlist | RIFFSTORE</title>
+
+<link rel="stylesheet" href="../styles/style.css">
+<link rel="stylesheet" href="../styles/wishlist.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+<div class="logo">RIFFSTORE</div>
+
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+<li><a href="shop.html">Shop</a></li>
+</ul>
+
+<div class="nav-icons">
+<div class="icon" onclick="window.location.href='wishlist.html'">
+  <i class="fa-solid fa-heart"></i>
+</div>
+<div class="icon" onclick="window.location.href='cart.html'">
+  <i class="fa-solid fa-bag-shopping"></i>
+</div>
+</div>
+
+</nav>
+
+<div class="wishlist-page">
+
+  <!-- HEADER -->
+  <div class="wishlist-header">
+    <h2>My Wishlist</h2>
+
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search..." />
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="wishlist-container"></div>
+
+</div>
+<script src="../scripts/wishlist.js"></script>
+
+</body>
+</html>
