@@ -2,7 +2,7 @@
 PAGE BACKGROUND
 ================================ */
 body {
-  background: #f5f7fa; /* 🔥 cleaner than gradient */
+  background: #f5f7fa;
   font-family: Arial, sans-serif;
   margin: 0;
 }
@@ -13,17 +13,17 @@ HEADER
 .wishlist-header {
   text-align: center;
   margin: 25px 0 15px;
-  color: #111; /* 🔥 FIX visibility */
+  color: #111;
 }
 
 .wishlist-header h2 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 /* ===============================
-SEARCH (IMPROVED 🔥)
+SEARCH
 ================================ */
 .search-box {
   background: #ffffff;
@@ -31,18 +31,9 @@ SEARCH (IMPROVED 🔥)
   padding: 10px 15px;
   display: flex;
   align-items: center;
-  max-width: 320px;
-  margin: 10px auto;
+  max-width: 350px;
+  margin: 10px auto 25px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: 0.2s;
-}
-
-.search-box:hover {
-  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
-}
-
-.search-box i {
-  color: #888;
 }
 
 .search-box input {
@@ -50,34 +41,38 @@ SEARCH (IMPROVED 🔥)
   outline: none;
   background: transparent;
   margin-left: 10px;
-  color: #333; /* 🔥 FIX text */
   width: 100%;
 }
 
+
 /* ===============================
-GRID
+GRID (PERFECT ALIGNMENT)
 ================================ */
 .wishlist-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
 }
 
 /* ===============================
 CARD
 ================================ */
 .wishlist-card {
+  width: 100%;
+  max-width: 280px;
   background: #fff;
-  border-radius: 20px;
-  padding: 14px;
+  border-radius: 16px;
+  padding: 15px;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.25s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .wishlist-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 /* ===============================
@@ -85,21 +80,21 @@ IMAGE
 ================================ */
 .wishlist-img img {
   width: 100%;
-  height: 190px; /* 🔥 slightly bigger */
+  height: 160px;
   object-fit: contain;
 }
 
 /* ===============================
-HEART ICON
+HEART REMOVE
 ================================ */
 .remove-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 12px;
+  right: 12px;
   background: #ff4d6d;
   color: white;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -110,17 +105,18 @@ HEART ICON
 /* ===============================
 TEXT
 ================================ */
-.wishlist-info {
-  margin-top: 12px;
+.wishlist-info h4 {
+  font-size: 15px;
+  margin: 6px 0;
 }
 
 .wishlist-info p {
   font-size: 12px;
-  color: #888;
+  color: #777;
 }
 
 .wishlist-info h4 {
-  font-size: 15px;
+  font-size: 16px;
   margin: 6px 0;
   color: #111;
 }
@@ -129,7 +125,7 @@ TEXT
 PRICE
 ================================ */
 .wishlist-price {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   color: #000;
 }
@@ -137,8 +133,28 @@ PRICE
 .old-price {
   text-decoration: line-through;
   color: red;
-  font-size: 12px;
+  font-size: 13px;
   margin-left: 6px;
+}
+
+/* ===============================
+ADD TO CART BUTTON (🔥 NEW)
+================================ */
+.move-cart-btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.move-cart-btn:hover {
+  background: #333;
 }
 
 /* ===============================
@@ -149,7 +165,6 @@ EMPTY STATE
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 60vh;
   text-align: center;
 }
@@ -166,7 +181,7 @@ EMPTY STATE
 }
 
 /* ===============================
-BUTTON
+SHOP BUTTON
 ================================ */
 .shop-btn {
   margin-top: 15px;
@@ -176,9 +191,18 @@ BUTTON
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .shop-btn:hover {
   background: #e6005c;
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: black;
+  color: white;
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 6px;
 }

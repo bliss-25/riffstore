@@ -10,7 +10,13 @@ let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 /* ===============================
-IMAGE FALLBACK (IMPORTANT 🔥)
+CLEAN DATA (🔥 IMPORTANT)
+================================ */
+wishlist = wishlist.filter(item => item && item.id);
+localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+/* ===============================
+IMAGE FALLBACK
 ================================ */
 function getImage(category) {
   if (category === "electric") return "../assets/image/guitar.png";
@@ -45,17 +51,21 @@ function renderWishlist() {
 
   wishlist.forEach(item => {
 
+    if (!item || !item.id) return; // 🔥 SAFETY
+
     html += `
-    <div class="wishlist-card" onclick="openProduct('${item.id}')">
+    <div class="wishlist-card" data-id="${item.id}">
 
       <!-- REMOVE -->
-      <div class="remove-btn" onclick="removeItem(event, '${item.id}')">
+      <div class="remove-btn" data-id="${item.id}">
         <i class="fa-solid fa-heart"></i>
       </div>
 
       <!-- IMAGE -->
       <div class="wishlist-img">
-        <img src="${item.image || getImage(item.category)}" alt="${item.title || item.name}">
+        <img class="product-img"
+          src="${item.image || getImage(item.category)}"
+          alt="${item.title || item.name}">
       </div>
 
       <!-- INFO -->
@@ -69,7 +79,7 @@ function renderWishlist() {
         </div>
 
         <!-- MOVE TO CART -->
-        <button class="move-cart-btn" onclick="moveToCart(event, '${item.id}')">
+        <button class="move-cart-btn" data-id="${item.id}">
           <i class="fa-solid fa-bag-shopping"></i> Move to Cart
         </button>
       </div>
@@ -78,37 +88,74 @@ function renderWishlist() {
     `;
   });
 
-  container.innerHTML = html; // ✅ FIXED (no overwrite bug)
+  container.innerHTML = html;
+
+  /* ===============================
+  EVENTS
+  ================================= */
+
+  // 🔥 OPEN PRODUCT (FINAL FIX)
+  document.querySelectorAll(".product-img").forEach((img) => {
+    img.addEventListener("click", () => {
+
+      const card = img.closest(".wishlist-card");
+      if (!card) return;
+
+      const id = card.dataset.id;
+
+      const item = wishlist.find(p => p && String(p.id) === String(id));
+      if (!item) return;
+
+      let correctId = item.id;
+
+      // convert old numeric ID → string ID
+      if (!isNaN(item.id) && typeof products !== "undefined") {
+        const idx = Number(item.id) - 1;
+        if (products[idx]) {
+          correctId = products[idx].id;
+        }
+      }
+
+      window.location.href = `./product.html?id=${correctId}`;
+    });
+  });
+
+  // REMOVE
+  document.querySelectorAll(".remove-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const id = btn.dataset.id;
+      removeItem(id);
+    });
+  });
+
+  // MOVE TO CART
+  document.querySelectorAll(".move-cart-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const id = btn.dataset.id;
+      moveToCart(id);
+    });
+  });
 }
 
 /* ===============================
 REMOVE ITEM
 ================================ */
-function removeItem(e, id) {
-  e.stopPropagation();
+function removeItem(id) {
 
-  const card = e.target.closest(".wishlist-card");
+  wishlist = wishlist.filter(item => item && String(item.id) !== String(id));
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
 
-  if (card) {
-    card.style.opacity = "0";
-    card.style.transform = "scale(0.9)";
-  }
-
-  setTimeout(() => {
-    wishlist = wishlist.filter(item => String(item.id) !== String(id));
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-    renderWishlist();
-  }, 200);
+  renderWishlist();
 }
 
 /* ===============================
 MOVE TO CART
 ================================ */
-function moveToCart(e, id) {
-  e.stopPropagation();
+function moveToCart(id) {
 
-  const item = wishlist.find(p => String(p.id) === String(id));
-
+  const item = wishlist.find(p => p && String(p.id) === String(id));
   if (!item) return;
 
   const existing = cart.find(p => String(p.id) === String(id));
@@ -125,24 +172,13 @@ function moveToCart(e, id) {
     });
   }
 
-  /* SAVE CART */
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  /* REMOVE FROM WISHLIST */
-  wishlist = wishlist.filter(p => String(p.id) !== String(id));
+  // REMOVE FROM WISHLIST
+  wishlist = wishlist.filter(p => p && String(p.id) !== String(id));
   localStorage.setItem("wishlist", JSON.stringify(wishlist));
 
   renderWishlist();
-}
-
-/* ===============================
-OPEN PRODUCT PAGE
-================================ */
-function openProduct(id) {
-  if (!id) return;
-
-  localStorage.setItem("selectedProductId", id);
-  window.location.href = "./product.html";
 }
 
 /* ===============================
@@ -151,14 +187,6 @@ GO TO SHOP
 function goToShop() {
   window.location.href = "../index.html";
 }
-
-/* ===============================
-MAKE GLOBAL (IMPORTANT)
-================================ */
-window.openProduct = openProduct;
-window.removeItem = removeItem;
-window.moveToCart = moveToCart;
-window.goToShop = goToShop;
 
 /* ===============================
 INIT

@@ -1,7 +1,6 @@
 /* ===============================
 SEARCH BAR
 ================================ */
-
 const searchBox = document.getElementById("searchBox");
 const searchIcon = document.querySelector(".search-icon");
 const searchInput = document.getElementById("searchInput");
@@ -23,33 +22,54 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
 /* ===============================
 GET PRODUCT ID FROM URL
 ================================ */
-
 const params = new URLSearchParams(window.location.search);
-const productId = Number(params.get("id"));
+const productId = params.get("id");
 
-const product = products.find(p => p.id === productId);
+/* ===============================
+FIND PRODUCT (CLEAN FIX)
+================================ */
+let product = null;
 
+// 1. Try exact match
+product = products.find(p => String(p.id) === String(productId));
+
+// 2. If not found → convert numeric ID to index
+if (!product && !isNaN(productId)) {
+  const index = Number(productId) - 1;
+  product = products[index];
+}
+// fallback (handles old numeric ids like 17 → drum17)
+if (!product) {
+  product = products.find(p => String(p.id).endsWith(productId));
+}
+
+/* ===============================
+SAFETY CHECK
+================================ */
+if (!product) {
+  document.body.innerHTML = `
+    <h2 style="text-align:center;margin-top:50px;">
+      Product not found 😢
+    </h2>
+  `;
+}
 
 /* ===============================
 UPDATE PRODUCT INFO
 ================================ */
-
 if (product) {
   document.querySelector(".product-title").innerText = product.name;
-  document.querySelector(".product-price").innerText = product.price;
+  document.querySelector(".product-price").innerText = "₹" + product.price;
   document.querySelector(".product-desc").innerText = product.desc;
   document.getElementById("mainImage").src = product.image;
 }
 
-
 /* ===============================
 IMAGE GALLERY
 ================================ */
-
 const mainImage = document.getElementById("mainImage");
 const thumbs = document.querySelectorAll(".thumb");
 
@@ -61,11 +81,9 @@ thumbs.forEach(thumb => {
   });
 });
 
-
 /* ===============================
 QUANTITY
 ================================ */
-
 const plus = document.getElementById("plus");
 const minus = document.getElementById("minus");
 const qty = document.getElementById("qty");
@@ -85,11 +103,9 @@ if (minus) {
   };
 }
 
-
 /* ===============================
 COLOR SELECT
 ================================ */
-
 const colors = document.querySelectorAll(".color");
 
 colors.forEach(color => {
@@ -99,18 +115,15 @@ colors.forEach(color => {
   });
 });
 
-
 /* ===============================
-ADD TO CART (FINAL FIXED)
+ADD TO CART
 ================================ */
-
 function addToCartFromProduct() {
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
   let quantity = Number(document.getElementById("qty").value);
 
-  let existing = cart.find(item => item.id === product.id);
+  let existing = cart.find(item => String(item.id) === String(product.id));
 
   if (existing) {
     existing.qty += quantity;
@@ -136,15 +149,11 @@ function addToCartFromProduct() {
   }, 1500);
 }
 
-
 /* ===============================
 UPDATE CART COUNT
 ================================ */
-
 function updateCartCount() {
-
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
   let count = 0;
 
   cart.forEach(item => {
@@ -158,9 +167,7 @@ function updateCartCount() {
   }
 }
 
-
 /* ===============================
 INIT
 ================================ */
-
 updateCartCount();
