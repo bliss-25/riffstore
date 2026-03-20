@@ -62,22 +62,17 @@ placeholder="Search instruments..."
 
 </nav>
 
-
-<!-- HERO -->
-
 <section class="hero">
+  <div class="hero-content">
+    <h1>Acoustic Guitars</h1>
 
-<div class="hero-content">
+    <p>
+      Experience warm natural tones with acoustic guitars crafted for
+      songwriters, performers, and beginners alike.
+    </p>
 
-<h1>Explore Instruments</h1>
-
-<p>
-Discover guitars, drums, keyboards and more.
-Find the perfect instrument for your music journey.
-</p>
-
-</div>
-
+    <button class="hero-btn">Browse Collection</button>
+  </div>
 </section>
 
 <!-- CATEGORY ICONS -->
@@ -115,13 +110,101 @@ Find the perfect instrument for your music journey.
 
 </section>
 
-<section class="products">
+<!-- FILTER SECTION -->
+<section class="filters">
 
-<h2>Featured Instruments</h2>
+  <div class="filter-bar">
+
+    <!-- SEARCH -->
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search instruments..." 
+      class="search-box"
+    >
+
+    <!-- BRAND -->
+    <select id="brandFilter" class="filter">
+      <option value="">Brand</option>
+    </select>
+
+    <!-- PRICE (STATIC OPTIONS REQUIRED) -->
+    <select id="priceFilter" class="filter">
+      <option value="">Price</option>
+      <option value="low">Below ₹50,000</option>
+      <option value="mid">₹50,000 - ₹1,00,000</option>
+      <option value="high">Above ₹1,00,000</option>
+    </select>
+
+    <!-- TOP WOOD -->
+    <select id="pickupFilter" class="filter">
+      <option value="">Top Wood</option>
+    </select>
+
+    <!-- BODY -->
+    <select id="bodyFilter" class="filter">
+      <option value="">Body Shape</option>
+    </select>
+
+    <!-- SORT -->
+    <select id="sortFilter" class="filter">
+      <option value="">Sort</option>
+      <option value="low">Price: Low to High</option>
+      <option value="high">Price: High to Low</option>
+    </select>
+
+    <!-- RESET BUTTON -->
+    <button type="button" id="resetBtn" class="reset-btn">
+      <i class="fas fa-rotate-left"></i>
+    </button>
+
+  </div>
+
+</section>
+
+
+<section class="products">
 
 <div class="product-grid">
 
 <!-- Products will load dynamically here -->
+
+</div>
+
+</section>
+
+
+<!-- FEATURE SECTION -->
+
+<section class="features">
+
+<h2 class="features-title">Why Choose RIFFSTORE</h2>
+
+<div class="features-grid">
+
+<div class="feature-box">
+<i class="fa-solid fa-truck"></i>
+<h4>Free Delivery</h4>
+<p>On all instruments</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-lock"></i>
+<h4>Secure Payment</h4>
+<p>100% protected checkout</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-music"></i>
+<h4>Music Lessons</h4>
+<p>Learn from professionals</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-star"></i>
+<h4>Trusted by Musicians</h4>
+<p>Thousands of happy players</p>
+</div>
 
 </div>
 
@@ -174,6 +257,18 @@ Find the perfect instrument for your music journey.
 
 </section>
 
+<!---care section-->
+
+<section class="care-section">
+
+  <h2 id="careTitle">Care Tips</h2>
+
+  <div class="care-grid" id="careGrid">
+    <!-- Dynamic cards -->
+  </div>
+
+</section>
+
 <!-- IMAGE BANNER -->
 
 <section class="promo-banner">
@@ -185,55 +280,7 @@ Find the perfect instrument for your music journey.
 
 </section>
 
-<div class="video-heading">
-<h2>Crafted for Musicians</h2>
-<p>Instruments built for creativity and performance</p>
-</div>
 
-<section class="video-section">
-<video autoplay muted loop playsinline>
-<source src="../assets/video/musicvid2.mp4" type="video/mp4">
-</video>
-</section>
-
-
-
-
-<!-- FEATURE SECTION -->
-
-<section class="features">
-
-<h2 class="features-title">Why Choose RIFFSTORE</h2>
-
-<div class="features-grid">
-
-<div class="feature-box">
-<i class="fa-solid fa-truck"></i>
-<h4>Free Delivery</h4>
-<p>On all instruments</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-lock"></i>
-<h4>Secure Payment</h4>
-<p>100% protected checkout</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-music"></i>
-<h4>Music Lessons</h4>
-<p>Learn from professionals</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-star"></i>
-<h4>Trusted by Musicians</h4>
-<p>Thousands of happy players</p>
-</div>
-
-</div>
-
-</section>
 
 <!-- FOOTER -->
 
@@ -256,13 +303,13 @@ for musicians of every level — from beginners to stage performers.
 <div class="footer-col">
 <h4>Instruments</h4>
 <ul>
-<li><a href="electric.html">Electric Guitars</a></li>
-<li><a href="acoustic.html">Acoustic Guitars</a></li>
-<li><a href="bass.html">Bass Guitars</a></li>
-<li><a href="drums.html">Drums & Percussion</a></li>
-<li><a href="keyboards.html">Keyboards & Pianos</a></li>
-<li><a href="synthesizers.html">Synthesizers</a></li>
-
+<li><a href="#">Electric Guitars</a></li>
+<li><a href="#">Acoustic Guitars</a></li>
+<li><a href="#">Bass Guitars</a></li>
+<li><a href="#">Drums & Percussion</a></li>
+<li><a href="#">Keyboards & Pianos</a></li>
+<li><a href="#">Synthesizers</a></li>
+<li><a href="#">Ukuleles</a></li>
 </ul>
 </div>
 
@@ -271,13 +318,13 @@ for musicians of every level — from beginners to stage performers.
 <div class="footer-col">
 <h4>Gear</h4>
 <ul>
-<li><a href="amplifiers.html">Amplifiers</a></li>
-<li><a href="effects.html">Effects Pedals</a></li>
-<li><a href="interfaces.html">Audio Interfaces</a></li>
-<li><a href="monitors.html">Studio Monitors</a></li>
-<li><a href="microphones.html">Microphones</a></li>
-<li><a href="headphones.html">Headphones</a></li>
-<li><a href="cables.html">Cables & Accessories</a></li>
+<li><a href="#">Amplifiers</a></li>
+<li><a href="#">Effects Pedals</a></li>
+<li><a href="#">Audio Interfaces</a></li>
+<li><a href="#">Studio Monitors</a></li>
+<li><a href="#">Microphones</a></li>
+<li><a href="#">Headphones</a></li>
+<li><a href="#">Cables & Accessories</a></li>
 </ul>
 </div>
 
@@ -286,12 +333,12 @@ for musicians of every level — from beginners to stage performers.
 <div class="footer-col">
 <h4>Support</h4>
 <ul>
-<li><a href="contact.html">Contact Us</a></li>
-<li><a href="shipping.html">Shipping Info</a></li>
-<li><a href="returns.html">Returns</a></li>
-<li><a href="warranty.html">Warranty</a></li>
-<li><a href="track-order.html">Track Order</a></li>
-<li><a href="faqs.html">FAQs</a></li>
+<li><a href="#">Contact Us</a></li>
+<li><a href="#">Shipping Info</a></li>
+<li><a href="#">Returns</a></li>
+<li><a href="#">Warranty</a></li>
+<li><a href="#">Track Order</a></li>
+<li><a href="#">FAQs</a></li>
 </ul>
 </div>
 
@@ -316,7 +363,6 @@ for musicians of every level — from beginners to stage performers.
 </div>
 
 </footer>
-
 
 <script src="../scripts/products.js"></script>
 <script src="../scripts/shop.js"></script>
