@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,161 +6,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="../styles/style.css">
+<link rel="stylesheet" href="../styles/success.css">
+
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-body {
-  background: #f3f4f6;
-  font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-/* MAIN CARD */
-.success-card {
-  background: white;
-  width: 360px;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* ICON */
-.icon {
-  width: 70px;
-  height: 70px;
-  margin: auto;
-  background: #e6f7ee;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon i {
-  color: #22c55e;
-  font-size: 28px;
-}
-
-/* TITLE */
-h2 {
-  margin: 15px 0 5px;
-}
-
-.sub-text {
-  color: #666;
-  font-size: 14px;
-}
-
-/* DETAILS BOX */
-.details {
-  margin-top: 20px;
-  background: #fafafa;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: left;
-}
-
-.details h4 {
-  margin-bottom: 10px;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  margin: 6px 0;
-  font-size: 14px;
-}
-
-.status {
-  color: #22c55e;
-  font-weight: 600;
-}
-
-/* BUTTONS */
-.track-btn {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  border: none;
-  border-radius: 10px;
-  background: #fff3e0;
-  color: #f59e0b;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.home-btn {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 10px;
-  background: #ff8c00;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-}
-</style>
-
 </head>
 
 <body>
 
 <div class="success-card">
 
-  <!-- ICON -->
-
   <div class="icon">
     <i class="fa-solid fa-check"></i>
   </div>
 
-  <!-- TEXT -->
-
   <h2>Payment Successful</h2>
   <p class="sub-text">Thanks for your order — it's now confirmed.</p>
-
-  <!-- DETAILS -->
 
   <div class="details">
     <h4>Payment Details</h4>
 
-```
-<div class="row">
-  <span>Transaction ID</span>
-  <span id="orderId"></span>
-</div>
+    <div class="row">
+      <span>Transaction ID</span>
+      <span id="orderId"></span>
+    </div>
 
-<div class="row">
-  <span>Date</span>
-  <span id="orderDate"></span>
-</div>
+    <div class="row">
+      <span>Date</span>
+      <span id="orderDate"></span>
+    </div>
 
-<div class="row">
-  <span>Type</span>
-  <span>Demo Payment</span>
-</div>
+    <div class="row">
+      <span>Type</span>
+      <span>Demo Payment</span>
+    </div>
 
-<div class="row">
-  <span>Total</span>
-  <span id="orderTotal"></span>
-</div>
+    <div class="row">
+      <span>Total</span>
+      <span id="orderTotal"></span>
+    </div>
 
-<div class="row">
-  <span>Status</span>
-  <span class="status">✔ Success</span>
-</div>
-```
+    <div class="row">
+      <span>Status</span>
+      <span class="status">Success</span>
+    </div>
 
   </div>
 
-  <!-- BUTTONS -->
-
-<button class="track-btn">Track Your Order</button> <button class="home-btn" onclick="goHome()">Back to Home</button>
+  <button class="track-btn" onclick="goToOrders()">Track Your Order</button>
+  <button class="home-btn" onclick="goHome()">Back to Home</button>
 
 </div>
 

@@ -1,106 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
+<title>Login | RIFFSTORE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Login | RIFFSTORE</title>
-
-<link rel="stylesheet" href="../styles/auth.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="../styles/login.css">
 </head>
 
 <body>
 
+<div class="wrapper">
 
-<div class="login-page">
-
-
-<!-- LEFT SECTION -->
-
-<div class="login-left">
-
-<h4>RIFFSTORE</h4>
-
-<h1>
-POWERED BY <br>
-MUSICIANS AROUND <br>
-THE WORLD
-</h1>
-
-<p class="subtitle">
-Learn guitar, discover gear and unlock your sound.
-</p>
-
-<p class="signup-text">
-Don't have an account?
-<a href="signup.html">Create account →</a>
-</p>
+  <div class="glass">
 
 
-<div class="about-card">
 
-<img src="../assets/image/image6.png">
-<div class="about-text">
+    <!-- MAIN -->
+    <div class="content">
 
-<h3>About Us</h3>
+      <!-- LEFT -->
+      <div class="left">
 
-<p>
-Premium guitars, lessons, and gear trusted by musicians worldwide.
-</p>
+        <p class="small">MUSIC MARKETPLACE</p>
 
+        <h1>
+          POWERED BY <br>
+          MUSIC LOVERS <br>
+          AROUND THE WORLD.
+        </h1>
+
+        <p class="sub">Don’t have account?</p>
+        <a href="signup.html">Create account →</a>
+
+        <!-- SMALL IMAGE CARD -->
+        <div class="small-card">
+          <img src="../assets/image/login.jpeg">
+          <div class="card-overlay">
+            <h4>About Riffstore</h4>
+            <p>Premium instruments & lessons</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right">
+
+        <img src="../assets/image/login.jpeg" class="bg-img">
+
+        <!-- LOGIN CARD -->
+        <div class="login-card">
+
+      <h3>Login to your account</h3>
+
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+
+<div class="options">
+  <label class="remember">
+    <input type="checkbox" id="remember">
+    <span>Remember me</span>
+  </label>
+
+  <button type="button" id="forgotBtn" class="forgot-btn">
+    Forgot your password?
+  </button>
 </div>
 
-</div>
+<button type="button" id="loginBtn">Login</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
+<script src="../scripts/login.js"></script>
 
+<script>
+  const user = JSON.parse(localStorage.getItem("user"));
 
-
-<!-- RIGHT SECTION -->
-
-<div class="login-right">
-
-<div class="login-box">
-
-<h3>Login to your account</h3>
-
-<form id="loginForm">
-
-<label>Email</label>
-<input type="email" placeholder="your@email.com" required>
-
-<label>Password</label>
-<input type="password" placeholder="********" required>
-
-<div class="login-options">
-
-<label>
-<input type="checkbox"> Remember me
-</label>
-
-<a href="#">Forgot password?</a>
-
-</div>
-
-<button type="submit" class="login-btn">
-Login
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-
-</div>
-
-<script src="../scripts/auth.js"></script>
-
+  if (user) {
+    window.location.href = "index.html";
+  }
+</script>
 </body>
 </html>

@@ -1,0 +1,212 @@
+/* ===============================
+BASE
+=============================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #e9e9e9;
+}
+
+/* ===============================
+WRAPPER
+=============================== */
+.wrapper {
+  padding: 30px;
+}
+
+/* ===============================
+GLASS CONTAINER
+=============================== */
+.glass {
+  background: #f7f7f7;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+/* ===============================
+NAVBAR
+=============================== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #efefef;
+  border-radius: 50px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-btn {
+  background: #b8f26c;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* ===============================
+MAIN
+=============================== */
+.content {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+/* ===============================
+LEFT
+=============================== */
+.left {
+  flex: 1;
+  padding: 40px;
+}
+
+.small {
+  font-size: 12px;
+  color: gray;
+}
+
+.left h1 {
+  font-size: 38px;
+  margin: 20px 0;
+  line-height: 1.3;
+}
+
+.sub {
+  color: gray;
+}
+
+.left a {
+  text-decoration: none;
+  color: black;
+}
+
+/* ===============================
+SMALL CARD
+=============================== */
+.small-card {
+  margin-top: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.small-card img {
+  width: 100%;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: white;
+}
+
+/* ===============================
+RIGHT
+=============================== */
+.right {
+  flex: 1;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===============================
+LOGIN CARD
+=============================== */
+.login-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 300px;
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.login-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+/* ===============================
+OPTIONS
+=============================== */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.remember {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+/* ===============================
+LOGIN BUTTON (ONLY THIS)
+=============================== */
+#loginBtn {
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#loginBtn:hover {
+  background: #222;
+}
+
+/* ===============================
+FORGOT PASSWORD (TEXT STYLE)
+=============================== */
+.forgot-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.forgot-btn:hover {
+  color: #000;
+  text-decoration: underline;
+}

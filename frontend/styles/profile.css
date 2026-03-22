@@ -1,107 +1,240 @@
+/* ===== BODY ===== */
 body {
   margin: 0;
-  font-family: Arial;
-  background: #000;
-  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f6;
 }
 
-/* NAVBAR */
-.navbar {
+/* ===== TITLE ===== */
+.page-title {
+  font-size: 26px;
+  margin: 20px;
+}
+
+/* ===== LAYOUT ===== */
+.profile-layout {
   display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: #0b0b0b;
-}
-
-.nav-links a {
-  margin: 0 10px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.logout-btn {
-  background: red;
-  color: #fff;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 8px;
-}
-
-/* PROFILE */
-.profile {
-  display: flex;
-  padding: 40px;
-  gap: 30px;
-}
-
-/* SIDEBAR */
-.profile-sidebar {
-  width: 250px;
-  background: #0b0b0b;
+  gap: 20px;
   padding: 20px;
-  border-radius: 15px;
 }
 
-.profile-user {
-  text-align: center;
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* ===== USER BOX ===== */
+.user-box {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.hello {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sub {
+  font-size: 13px;
+  color: #777;
+}
+
+/* ===== MENU ===== */
+.menu p {
+  padding: 10px 8px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.menu p:hover {
+  background: #f5f5f6;
+  color: #ff3f6c;
+}
+
+.menu p.active {
+  background: #ffe4ec;
+  color: #ff3f6c;
+  font-weight: 600;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  min-height: 400px;
+}
+
+/* ===== HEADINGS ===== */
+.content h2 {
   margin-bottom: 20px;
 }
 
-.avatar {
-  width: 80px;
-  height: 80px;
-  background: #222;
-  border-radius: 50%;
-  margin: auto;
-}
-
-.profile-menu li {
-  list-style: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-.profile-menu li:hover {
-  background: #1a1a1a;
-}
-
-/* CONTENT */
-.profile-content {
-  flex: 1;
-}
-
-.tab {
-  display: none;
-}
-
-.tab.active {
-  display: block;
-}
-
-/* ITEMS */
+/* ===== GENERAL CARD ===== */
 .card {
-  background: #111;
-  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #eee;
   border-radius: 10px;
-  margin-bottom: 10px;
+  padding: 15px;
+  margin-bottom: 12px;
+  background: #fff;
 }
 
-/* INPUTS */
-input {
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  width: 250px;
-  border-radius: 8px;
-  border: none;
+/* TEXT */
+.card p {
+  margin: 3px 0;
+}
+
+/* IMAGE */
+.card-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  gap: 8px;
 }
 
 button {
+  background: #ff3f6c;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* ===== EMPTY ===== */
+.empty {
+  color: gray;
+}
+
+/* ========================= */
+/* 🔥 ORDER UI (FIXED) */
+/* ========================= */
+/* HIDE ITEMS */
+.hidden {
+  display: none;
+}
+
+/* CLICKABLE HEADER */
+.order-header {
+  cursor: pointer;
+}
+
+/* ARROW */
+.toggle {
+  font-size: 14px;
+}
+.order-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+}
+
+/* ORDER HEADER */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* ORDER ITEMS */
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ITEM CARD */
+.item-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fafafa;
   padding: 10px;
   border-radius: 8px;
+}
+
+/* PROFILE BOX */
+.profile-box {
+  max-width: 600px;
+}
+
+/* ROW */
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+/* LEFT LABEL */
+.profile-row span:first-child {
+  color: #555;
+}
+
+/* RIGHT VALUE */
+.profile-row span:last-child {
+  color: #222;
+  font-weight: 500;
+}
+button {
+  margin-top: 15px;
+}
+/* EDIT BUTTON */
+.edit-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background: #ff3f6c;
+  color: white;
   border: none;
-  background: #a855f7;
-  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
   cursor: pointer;
+}
+
+.edit-btn:hover {
+  opacity: 0.9;
+}
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .profile-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .order-header {
+    flex-direction: column;
+    gap: 5px;
+  }
 }

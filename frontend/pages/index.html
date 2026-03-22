@@ -43,6 +43,40 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   >
 
 </div>
+<div class="user-container">
+
+  <div class="user-icon">
+    <i class="fa-regular fa-user"></i>
+  </div>
+
+  <div class="profile-dropdown" id="profileDropdown">
+
+    <div class="profile-header">
+      <p class="username">Hello, Guest</p>
+      <p class="phone"></p>
+    </div>
+
+    <hr>
+
+    <div class="profile-menu">
+      <p onclick="openProfile('orders')">Orders</p>
+      <p onclick="openProfile('wishlist')">Wishlist</p>
+      <p onclick="openProfile('lessons')">Lessons</p>
+      <p onclick="openProfile('contact')">Contact Us</p>
+      <p onclick="openProfile('coupons')">Coupons</p>
+      <p onclick="openProfile('address')">Saved Addresses</p>
+    </div>
+
+    <hr>
+
+    <div class="profile-menu">
+      <p onclick="openProfile('profile')">Edit Profile</p>
+      <p onclick="logout()">Logout</p>
+    </div>
+
+  </div>
+</div>
+
 
 <!-- WISHLIST -->
 <div class="icon" onclick="window.location.href='wishlist.html'">
@@ -56,7 +90,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 </div>
 </nav>
-
+<!-- MAIN DYNAMIC CONTENT -->
+<div id="mainContent"></div>
 
 <!-- HERO SECTION -->
 
@@ -404,5 +439,15 @@ for musicians of every level — from beginners to stage performers.
 
 <script src="../scripts/shop.js"></script>
 <script src="../scripts/main.js"></script>
+
+<script>
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  // 🔐 Protect page
+  if (!user) {
+    window.location.href = "login.html";
+  }
+
+</script>
 </body>
 </html>

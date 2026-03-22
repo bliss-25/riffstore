@@ -80,7 +80,7 @@ function renderLessons() {
           <p class="desc">${lesson.desc}</p>
 
           <button class="cart-btn"
-            onclick="addToCart(event, '${lesson.id}', '${lesson.title}', ${lesson.price}, '${lesson.image}')">
+            onclick="addToCart(event, '${lesson.id}', '${lesson.title}', ${lesson.price}, '${lesson.image}', 'lesson')">
             <i class="fa-solid fa-bag-shopping"></i> Enroll Now
           </button>
 
@@ -91,12 +91,12 @@ function renderLessons() {
     grid.innerHTML += card;
   });
 
-  initWishlist(); // 🔥 important
+  initWishlist();
 }
 
 
 /* ===============================
-WISHLIST (WORKING)
+WISHLIST (UI ONLY)
 ================================ */
 function initWishlist() {
 
@@ -119,12 +119,3 @@ function initWishlist() {
 INIT
 ================================ */
 document.addEventListener("DOMContentLoaded", renderLessons);
-function enrollCourse(title) {
-  let courses = JSON.parse(localStorage.getItem("courses")) || [];
-
-  courses.push({ title });
-
-  localStorage.setItem("courses", JSON.stringify(courses));
-
-  alert("Course added to My Courses!");
-}

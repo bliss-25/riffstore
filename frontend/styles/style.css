@@ -65,30 +65,138 @@ transition:.3s;
 width:100%;
 }
 
+/* ===============================
+NAV ICONS CONTAINER
+================================ */
 .nav-icons {
   display: flex;
   align-items: center;
-  gap: 18px; /* spacing between icons */
+  margin-right: 20px;
 }
 
-/* ICON SIZE */
-.nav-icons i {
-  font-size: 18px;
-  cursor: pointer;
-  color: white;
-}
-
-/* ICON WRAPPER */
-.icon, .cart-icon {
+/* ===============================
+COMMON ICON BOX
+================================ */
+.icon,
+.user-icon,
+.cart-icon {
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.nav-icons i:hover{
-color:#ff4d4d;
-transform:scale(1.15);
+/* ===============================
+ICON STYLE + BASE SPACING
+================================ */
+.nav-icons i {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  margin-left: 18px; /* default spacing */
+}
+
+/* ===============================
+HOVER EFFECT
+================================ */
+.nav-icons i:hover {
+  color: #ff3f6c;
+  transform: scale(1.1);
+}
+
+/* ===============================
+SEARCH ICON (🔥 FIX HERE)
+================================ */
+.search-icon {
+  margin-left: 0;        /* no gap from left */
+  margin-right: -6px;    /* pull closer to user icon */
+}
+
+/* ===============================
+USER CONTAINER
+================================ */
+.user-container {
+  position: relative;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 260px;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  display: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.profile-dropdown.active {
+  display: block;
+}
+
+.profile-menu p {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.profile-menu p:hover {
+  color: #ff3f6c;
+}
+.profile-dropdown {
+  color: black;   /* force visible text */
+}
+
+.profile-menu p {
+  color: black !important;
+}
+
+.profile-header .username,
+.profile-header .phone {
+  color: black !important;
+}
+.profile-menu p:hover {
+  color: #ff3f6c !important;
+}
+* SEARCH */
+
+.search-container{
+position:relative;
+display:flex;
+align-items:center;
+}
+
+.search-icon{
+cursor:pointer;
+font-size:18px;
+}
+
+.search-container input{
+width:0;
+opacity:0;
+padding:0;
+border:none;
+background:#111;
+color:white;
+outline:none;
+transition:0.35s ease;
+position:absolute;
+right:30px;
+pointer-events:none;
+}
+
+.search-container.active input{
+width:200px;
+opacity:1;
+padding:8px 12px;
+border:1px solid #333;
+border-radius:6px;
+pointer-events:auto;
 }
 
 /* hero section */

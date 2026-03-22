@@ -15,7 +15,7 @@ function saveCart(cart) {
 /* ===============================
 ADD TO CART
 ================================ */
-function addToCart(event, id, title, price, image) {
+function addToCart(event, id, title, price, image, type = "product") {
 
   if (event) event.stopPropagation();
 
@@ -31,15 +31,15 @@ function addToCart(event, id, title, price, image) {
       title,
       price,
       image,
-      qty: 1
+      qty: 1,
+      type // 🔥 THIS IS THE FIX
     });
   }
 
   saveCart(cart);
   updateCartCount();
-  showToast("Enrolled successfully ✅");
+  showToast(type === "lesson" ? "Enrolled successfully ✅" : "Added to cart 🛒");
 }
-
 /* ===============================
 UPDATE COUNT
 ================================ */
