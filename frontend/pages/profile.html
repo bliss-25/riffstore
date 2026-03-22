@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="../styles/profile.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h2>RIFFSTORE</h2>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="lessons.html">Lessons</a>
+  </div>
+  <button class="logout-btn">Logout</button>
+</header>
+
+<section class="profile">
+
+  <!-- SIDEBAR -->
+  <div class="profile-sidebar">
+    <div class="profile-user">
+      <div class="avatar"></div>
+      <h3 id="username">User</h3>
+      <p id="email">user@email.com</p>
+    </div>
+
+    <ul class="profile-menu">
+      <li onclick="showTab('courses')">My Courses</li>
+      <li onclick="showTab('orders')">Orders</li>
+      <li onclick="showTab('wishlist')">Wishlist</li>
+      <li onclick="showTab('address')">Addresses</li>
+      <li onclick="showTab('settings')">Settings</li>
+    </ul>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="profile-content">
+
+    <div id="courses" class="tab active">
+      <h2>My Courses</h2>
+      <div id="coursesList"></div>
+    </div>
+
+    <div id="orders" class="tab">
+      <h2>Order History</h2>
+      <div id="ordersList"></div>
+    </div>
+
+    <div id="wishlist" class="tab">
+      <h2>Wishlist</h2>
+      <div id="wishlistList"></div>
+    </div>
+
+    <div id="address" class="tab">
+      <h2>Saved Addresses</h2>
+      <div id="addressList"></div>
+
+      <input type="text" id="newAddress" placeholder="Enter new address">
+      <button onclick="addAddress()">Add Address</button>
+    </div>
+
+    <div id="settings" class="tab">
+      <h2>Account Settings</h2>
+      <input type="text" id="nameInput" placeholder="Name">
+      <input type="email" id="emailInput" placeholder="Email">
+      <button onclick="saveProfile()">Save</button>
+    </div>
+
+  </div>
+
+</section>
+
+<link rel="stylesheet" href="../styles/profile.css">
+<script src="../scripts/profile.js"></script>
+</body>
+</html>

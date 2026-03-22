@@ -459,3 +459,13 @@ function loadCareSection(category) {
 document.addEventListener("DOMContentLoaded", () => {
   loadCareSection(); // shows general tips first
 });
+
+function addToWishlist(title) {
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  wishlist.push({ title });
+
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+  alert("Added to wishlist");
+}

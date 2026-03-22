@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -16,50 +17,62 @@
 <body class="cart-page">
 
   <!-- NAVBAR -->
+
   <nav class="navbar">
-    <div class="logo">RIFFSTORE</div>
+    <div class="logo" onclick="window.location.href='../index.html'">RIFFSTORE</div>
 
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="shop.html">Shop</a></li>
-    </ul>
 
-    <div class="cart-icon">
-      <i class="fas fa-shopping-bag"></i>
-      <span id="cartCount">0</span>
-    </div>
+<ul class="nav-links">
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="shop.html">Shop</a></li>
+</ul>
+
+<div class="cart-icon">
+  <i class="fas fa-shopping-bag"></i>
+  <span id="cartCountNav">0</span>
+</div>
+
+
   </nav>
 
-  <!-- MAIN LAYOUT -->
+  <!-- MAIN -->
+
   <div class="layout">
 
-    <!-- CART PANEL -->
-    <div class="cart-panel">
 
-      <!-- HEADER -->
-      <div class="cart-header">
-        <h2>Cart</h2>
-        <span id="cartCount">0</span>
-      </div>
+<!-- CART PANEL -->
+<div class="cart-panel">
 
-      <!-- ITEMS -->
-      <div class="cart-content" id="cartItems">
-        <p>Your cart is empty</p>
-      </div>
+  <!-- HEADER -->
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <span id="cartCountHeader">0 items</span>
+  </div>
 
-      <!-- FOOTER -->
-      <div class="cart-footer">
-        <h3>Total: Rp. <span id="cartTotal">0</span></h3>
-       <button class="checkout-btn" onclick="window.location.href='checkout.html'">
-  Checkout
-</button>
-      </div>
+  <!-- ITEMS -->
+  <div class="cart-content" id="cartItems">
+    <p class="empty-text">Your cart is empty 🛒</p>
+  </div>
 
-    </div>
+  <!-- FOOTER -->
+  <div class="cart-footer">
+
+    <h3>Total: ₹ <span id="cartTotal">0</span></h3>
+
+    <button class="checkout-btn" id="checkoutBtn"
+      onclick="window.location.href='checkout.html'">
+      Checkout
+    </button>
+
+  </div>
+
+</div>
+
 
   </div>
 
   <!-- SCRIPT -->
+
   <script src="../scripts/cart.js"></script>
 
 </body>

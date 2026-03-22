@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #000;
+  color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #0b0b0b;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logout-btn {
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+
+/* PROFILE */
+.profile {
+  display: flex;
+  padding: 40px;
+  gap: 30px;
+}
+
+/* SIDEBAR */
+.profile-sidebar {
+  width: 250px;
+  background: #0b0b0b;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.profile-user {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: #222;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.profile-menu li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.profile-menu li:hover {
+  background: #1a1a1a;
+}
+
+/* CONTENT */
+.profile-content {
+  flex: 1;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+/* ITEMS */
+.card {
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* INPUTS */
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #a855f7;
+  color: #fff;
+  cursor: pointer;
+}

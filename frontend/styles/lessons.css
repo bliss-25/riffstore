@@ -1,0 +1,478 @@
+/* ===============================
+GLOBAL
+================================ */
+body {
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===============================
+SEARCH
+================================ */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.search-icon {
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.search-container input {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  opacity: 0;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f5f5f5;
+  transition: 0.3s ease;
+}
+
+.search-container.active input {
+  width: 220px;
+  opacity: 1;
+  transform: translate(-100%, -50%);
+}
+
+/* ===============================
+HERO
+================================ */
+.lessons-hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.lessons-hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.lessons-hero p {
+  color: #aaa;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* ===============================
+GRID
+================================ */
+.products {
+  padding: 40px 60px;
+}
+
+.products h2 {
+  margin-bottom: 20px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* ===============================
+CARD
+================================ */
+.product-card {
+  background: #0b0b0b;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 0, 0, 0.15);
+  transition: 0.3s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===============================
+WISHLIST
+================================ */
+.wishlist {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.wishlist i {
+  color: #fff;
+}
+
+/* ===============================
+IMAGE (FIXED ISSUE HERE)
+================================ */
+.product-img {
+  width: 100%;
+  height: 200px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* IMPORTANT FIX */
+}
+
+/* ===============================
+INFO
+================================ */
+.product-info {
+  padding: 15px;
+}
+
+.product-info h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.price {
+  color: #00ff88;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.rating {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.delivery {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+COLORS
+================================ */
+.colors {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.colors span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.black { background: #000; }
+.red { background: red; }
+.blue { background: blue; }
+.white { background: #fff; }
+
+/* ===============================
+DESCRIPTION
+================================ */
+.desc {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+/* ===============================
+BUTTON
+================================ */
+.cart-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cart-btn:hover {
+  background: #00ff88;
+}
+
+
+/* ===============================
+LESSON CARD FIX (IMPORTANT)
+================================ */
+.lesson-card {
+  background: #0b0b0b;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.lesson-card:hover {
+  transform: translateY(-6px);
+}
+
+/* IMAGE FIX */
+.lesson-card img {
+  width: 100%;
+  height: 180px;   /* 🔥 controls size */
+  object-fit: cover;
+  display: block;
+}
+
+/* CONTENT FIX */
+.lesson-card-content {
+  padding: 15px;
+}
+
+.lesson-card-content h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+}
+
+.lesson-card-content p {
+  margin: 5px 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.lesson-card-content a {
+  color: #9b5cff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===============================
+LESSON GRID
+================================ */
+.featured-lessons {
+  padding: 40px 60px;
+}
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* ===============================
+LESSON CARD FINAL
+================================ */
+.lesson-card {
+  background: #0b0b0b;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.lesson-card:hover {
+  transform: translateY(-6px);
+}
+
+.lesson-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.lesson-card-content {
+  padding: 15px;
+}
+
+.lesson-card-content h3 {
+  margin-bottom: 5px;
+}
+
+.lesson-card-content p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.lesson-card-content span {
+  display: block;
+  font-size: 13px;
+  color: #888;
+  margin: 8px 0;
+}
+
+.lesson-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: transparent;
+  color: #a855f7; /* purple */
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+/* HOVER (very subtle) */
+.lesson-btn:hover {
+  border-color: #a855f7;
+  color: #c084fc;
+}
+
+/* CLICK (main effect) */
+.lesson-btn:active {
+  transform: scale(0.96);
+  background: #a855f7;
+  color: #000;
+  border-color: #a855f7;
+}
+/* ===============================
+VIDEO
+================================ */
+.lesson-video {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 450px;
+  border-radius: 12px;
+}
+
+/* ===============================
+CTA
+================================ */
+.lesson-cta {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.start-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #00ff88;
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* FOOTER */
+
+.footer{
+background:#050505;
+padding:80px 80px 30px;
+border-top:1px solid #222;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+gap:40px;
+}
+
+.footer-col h3{
+font-size:22px;
+margin-bottom:15px;
+}
+
+.footer-col h4{
+margin-bottom:15px;
+}
+
+.footer-col p{
+opacity:.7;
+line-height:1.6;
+}
+
+.footer-col ul{
+list-style:none;
+}
+
+.footer-col ul li{
+margin-bottom:10px;
+}
+
+.footer-col ul li a{
+text-decoration:none;
+color:white;
+opacity:.7;
+transition:.3s;
+}
+
+.footer-col ul li a:hover{
+color:#ff4d4d;
+opacity:1;
+}
+
+.social-icons{
+display:flex;
+gap:15px;
+font-size:18px;
+}
+
+.social-icons i{
+cursor:pointer;
+transition:.3s;
+}
+
+.social-icons i:hover{
+color:#ff4d4d;
+transform:scale(1.2);
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:50px;
+padding-top:20px;
+border-top:1px solid #222;
+opacity:.6;
+font-size:14px;
+}
+
+.cart-icon{
+position:relative;
+display:inline-block;
+}
+
+#cart-count{
+position:absolute;
+top:-6px;
+right:-10px;
+background:#ff3b3b;
+color:white;
+font-size:12px;
+padding:2px 6px;
+border-radius:50%;
+}
+/* ===============================
+RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .products {
+    padding: 20px;
+  }
+
+  .lessons-hero h1 {
+    font-size: 28px;
+  }
+
+  .video-container iframe {
+    height: 250px;
+  }
+}

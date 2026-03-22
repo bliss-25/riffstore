@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Lessons</title>
+
+<link rel="stylesheet" href="../styles/style.css">
+<link rel="stylesheet" href="../styles/lessons.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">lessons</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="lessons.html">Lessons</a></li>
+    <li><a href="#">Artists</a></li>
+  </ul>
+
+ <div class="nav-icons">
+
+<!-- SEARCH -->
+
+<div class="search-container" id="searchBox">
+
+  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search instruments..."
+  >
+
+</div>
+
+<!-- WISHLIST -->
+<div class="icon" onclick="window.location.href='wishlist.html'">
+  <i class="fa-regular fa-heart"></i>
+</div>
+
+<!-- CART -->
+<div class="icon" onclick="window.location.href='cart.html'">
+  <i class="fa-solid fa-bag-shopping"></i>
+  <span id="cartCount" class="cart-count">0</span>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+<section class="lessons-hero">
+  <h1>Learn Music with RIFFSTORE</h1>
+  <p>
+    Master guitar, bass, drums, and keyboard with structured lessons
+    from beginner to advanced level.
+  </p>
+</section>
+
+
+<!-- LESSON GRID -->
+<section class="products">
+  <h2>Choose Your Instrument</h2>
+  <div id="lessonsGrid" class="products-grid"></div>
+</section>
+
+
+<!-- LESSON GRID (ENROLL SECTION) -->
+<section class="products">
+
+  <h2>Choose Your Instrument</h2>
+  <div id="lessonsGrid" class="products-grid"></div>
+
+</section>
+
+
+<!-- SAMPLE LESSON VIDEO (NOW BELOW) -->
+<section class="lesson-video">
+
+  <h2>Watch a Sample Lesson</h2>
+
+  <p>See how our lessons are structured before you start learning.</p>
+
+  <div class="video-container">
+
+    <iframe 
+      width="800" 
+      height="450" 
+      src="https://www.youtube.com/embed/2Vv-BfVoq4g" 
+      title="Sample Guitar Lesson"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+</section>
+
+
+<!-- FEATURED LESSONS -->
+<section class="featured-lessons">
+
+  <h2>Popular Lessons</h2>
+
+  <div class="lesson-grid">
+
+    <div class="lesson-card">
+      <img src="../assets/image/acoustic4.jpg">
+      <div class="lesson-card-content">
+        <h3>Acoustic Guitar Basics</h3>
+        <p>Beginner friendly course covering chords and strumming.</p>
+        <span>8 Lessons • Beginner</span>
+        <a href="lesson_details.html" class="lesson-btn">View Course</a>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <img src="../assets/image/acoustic1.jpg">
+      <div class="lesson-card-content">
+        <h3>Acoustic Guitar Basics</h3>
+        <p>Beginner friendly course covering chords and strumming.</p>
+        <span>8 Lessons • Beginner</span>
+        <a href="lesson_details.html" class="lesson-btn">View Course</a>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <img src="../assets/image/acoustic2.jpg">
+      <div class="lesson-card-content">
+        <h3>Acoustic Guitar Basics</h3>
+        <p>Beginner friendly course covering chords and strumming.</p>
+        <span>8 Lessons • Beginner</span>
+        <a href="lesson_details.html" class="lesson-btn">View Course</a>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <img src="../assets/image/acoustic3.jpg">
+      <div class="lesson-card-content">
+        <h3>Acoustic Guitar Basics</h3>
+        <p>Beginner friendly course covering chords and strumming.</p>
+        <span>8 Lessons • Beginner</span>
+        <a href="lesson_details.html" class="lesson-btn">View Course</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- CTA -->
+<section class="lesson-cta">
+  <h2>Start Your Musical Journey Today</h2>
+  <p>Join thousands of musicians learning with RIFFSTORE.</p>
+  <a href="#" class="start-btn">Start Learning</a>
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- BRAND -->
+
+<div class="footer-col">
+<h3>RIFFSTORE</h3>
+<p>
+Discover instruments, studio gear, and lessons designed
+for musicians of every level — from beginners to stage performers.
+</p>
+</div>
+
+<!-- INSTRUMENTS -->
+
+<div class="footer-col">
+<h4>Instruments</h4>
+<ul>
+<li><a href="#">Electric Guitars</a></li>
+<li><a href="#">Acoustic Guitars</a></li>
+<li><a href="#">Bass Guitars</a></li>
+<li><a href="#">Drums & Percussion</a></li>
+<li><a href="#">Keyboards & Pianos</a></li>
+<li><a href="#">Synthesizers</a></li>
+<li><a href="#">Ukuleles</a></li>
+</ul>
+</div>
+
+<!-- GEAR -->
+
+<div class="footer-col">
+<h4>Gear</h4>
+<ul>
+<li><a href="#">Amplifiers</a></li>
+<li><a href="#">Effects Pedals</a></li>
+<li><a href="#">Audio Interfaces</a></li>
+<li><a href="#">Studio Monitors</a></li>
+<li><a href="#">Microphones</a></li>
+<li><a href="#">Headphones</a></li>
+<li><a href="#">Cables & Accessories</a></li>
+</ul>
+</div>
+
+<!-- SUPPORT -->
+
+<div class="footer-col">
+<h4>Support</h4>
+<ul>
+<li><a href="#">Contact Us</a></li>
+<li><a href="#">Shipping Info</a></li>
+<li><a href="#">Returns</a></li>
+<li><a href="#">Warranty</a></li>
+<li><a href="#">Track Order</a></li>
+<li><a href="#">FAQs</a></li>
+</ul>
+</div>
+
+<!-- FOLLOW -->
+
+<div class="footer-col">
+<h4>Follow Us</h4>
+
+<div class="social-icons">
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-youtube"></i>
+<i class="fa-brands fa-x-twitter"></i>
+<i class="fa-brands fa-facebook"></i>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 RiffStore. Built for musicians.</p>
+</div>
+
+</footer>
+
+
+<!-- SCRIPTS -->
+<script src="../scripts/cart.js"></script>
+<script src="../scripts/lessons.js"></script>
+</body>
+</html>

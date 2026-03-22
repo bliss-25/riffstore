@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment | RIFFSTORE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../styles/payment.css">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+    <div class="logo" onclick="window.location.href='../index.html'">
+      RIFFSTORE
+    </div>
+  </nav>
+
+  <div class="payment-container">
+
+
+<!-- LEFT SIDE -->
+<div class="payment-left">
+
+  <h2>Select Payment Method</h2>
+
+  <!-- OPTIONS -->
+  <div class="payment-option active" onclick="selectMethod(this, 'card')">
+    <i class="fa-solid fa-credit-card"></i> Card Payment
+  </div>
+
+  <div class="payment-option" onclick="selectMethod(this, 'upi')">
+    <i class="fa-solid fa-mobile-screen"></i> UPI Payment
+  </div>
+
+  <div class="payment-option" onclick="selectMethod(this, 'cod')">
+    <i class="fa-solid fa-money-bill"></i> Cash on Delivery
+  </div>
+
+  <!-- CARD FORM -->
+  <div id="cardBox" class="payment-box">
+    <input placeholder="Card Number">
+    <input placeholder="Name on Card">
+
+    <div class="row">
+      <input placeholder="MM/YY">
+      <input placeholder="CVV">
+    </div>
+  </div>
+
+  <!-- UPI FORM -->
+  <div id="upiBox" class="payment-box hidden">
+    <input placeholder="Enter UPI ID (example@upi)">
+  </div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="payment-right">
+
+  <h3>Order Summary</h3>
+
+  <div class="summary">
+    <p>Total Amount <span id="finalAmount">₹0</span></p>
+  </div>
+
+  <button class="pay-btn" onclick="payNow()">Pay Now</button>
+
+</div>
+
+
+  </div>
+
+  <script src="../scripts/payment.js"></script>
+
+</body>
+</html>

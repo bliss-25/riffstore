@@ -1,0 +1,369 @@
+/* ===============================
+GLOBAL
+================================ */
+body {
+background: #f5f5f5;
+font-family: Arial, sans-serif;
+margin: 0;
+}
+
+/* ===============================
+LAYOUT
+================================ */
+.checkout-container {
+display: flex;
+gap: 40px;
+padding: 40px;
+}
+
+/* PANELS */
+.checkout-left,
+.checkout-right {
+background: white;
+padding: 25px;
+border-radius: 12px;
+}
+
+.checkout-left {
+flex: 2;
+}
+
+.checkout-right {
+flex: 1;
+box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* ===============================
+NAVBAR
+================================ */
+.navbar {
+height: 65px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 50px;
+background: white;
+border-bottom: 1px solid #eee;
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+font-size: 20px;
+font-weight: 600;
+letter-spacing: 2px;
+cursor: pointer;
+}
+
+/* RIGHT SIDE */
+.nav-icons {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+/* ICON */
+.icon {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.icon i {
+font-size: 18px;
+color: black;
+cursor: pointer;
+transition: 0.2s;
+}
+
+.icon i:hover {
+color: #ff4d4d;
+transform: scale(1.1);
+}
+
+/* ===============================
+SEARCH
+================================ */
+.search-container {
+position: relative;
+display: flex;
+align-items: center;
+margin-right: 4px;
+}
+
+.search-icon {
+font-size: 16px;
+cursor: pointer;
+z-index: 2;
+}
+
+.search-container input {
+position: absolute;
+right: 0;
+top: 50%;
+transform: translateY(-50%);
+width: 0;
+opacity: 0;
+padding: 8px 12px;
+border: 1px solid #ddd;
+border-radius: 8px;
+background: #f5f5f5;
+transition: 0.3s ease;
+}
+
+/* OPEN LEFT */
+.search-container.active input {
+width: 220px;
+opacity: 1;
+transform: translate(-100%, -50%);
+}
+
+/* ===============================
+FORM
+================================ */
+input, textarea, select {
+width: 100%;
+padding: 12px;
+margin: 10px 0;
+border: 1px solid #ddd;
+border-radius: 8px;
+font-size: 14px;
+}
+
+textarea {
+height: 100px;
+resize: none;
+}
+
+.row {
+display: flex;
+gap: 10px;
+}
+
+/* ===============================
+SHIPPING
+================================ */
+.shipping-options {
+display: flex;
+gap: 15px;
+margin-top: 10px;
+}
+
+.shipping-card {
+flex: 1;
+border: 2px solid #ddd;
+padding: 15px;
+border-radius: 10px;
+display: flex;
+justify-content: space-between;
+cursor: pointer;
+color: #111;
+}
+
+.shipping-card small {
+color: #666;
+}
+
+.shipping-card.active {
+border-color: black;
+background: #f9f9f9;
+}
+
+/* ===============================
+CART ITEMS
+================================ */
+.checkout-item {
+display: flex;
+align-items: center;
+gap: 14px;
+margin: 14px 0;
+}
+
+.checkout-img {
+width: 60px;
+height: 60px;
+object-fit: cover;
+border-radius: 8px;
+}
+
+.checkout-info {
+flex: 1;
+}
+
+.checkout-title {
+font-size: 14px;
+font-weight: 500;
+}
+
+.checkout-sub {
+font-size: 12px;
+color: gray;
+}
+
+.checkout-price {
+font-weight: 500;
+}
+
+.checkout-right {
+  height: fit-content;   
+  align-self: flex-start;
+}
+.checkout-left {
+  flex: 2;
+  align-self: flex-start;
+}
+
+
+/* ===============================
+DISCOUNT BOX
+================================ */
+.discount-box {
+display: flex;
+align-items: center;
+border: 1px solid #ddd;
+border-radius: 8px;
+overflow: hidden;
+margin: 20px 0 10px;
+}
+
+.discount-box input {
+flex: 1;
+border: none;
+padding: 10px;
+margin: 0;
+outline: none;
+}
+
+.discount-box button {
+padding: 10px 16px;
+background: black;
+color: white;
+border: none;
+cursor: pointer;
+font-size: 13px;
+}
+
+/* DISCOUNT NOTE */
+.discount-note {
+  font-size: 13px;
+  color: #1a7f37;
+  background: #e9f7ef;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-top: 10px;
+  width: 100%;              /* 🔥 full width */
+  box-sizing: border-box;
+  border-left: 4px solid #22c55e;
+}
+
+/* OPTIONAL HOVER (nice effect) */
+.discount-note:hover {
+  background: #dff3e7;
+}
+
+.discount-note {
+  border-left: 4px solid #22c55e;
+}
+
+
+/* TOAST BASE */
+/* ===============================
+TOAST (PREMIUM CENTER)
+================================ */
+#toast {
+position: fixed;
+top: 20px;
+left: 50%;
+transform: translate(-50%, -20px);
+
+min-width: 240px;
+max-width: 300px;
+
+padding: 10px 16px;
+border-radius: 10px;
+
+font-size: 13.5px;
+font-weight: 500;
+
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 6px;
+
+opacity: 0;
+transition: 0.3s ease;
+
+z-index: 9999;
+
+color: white;
+background: linear-gradient(135deg, #22c55e, #16a34a);
+
+box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* SHOW */
+#toast.show {
+opacity: 1;
+transform: translate(-50%, 0);
+}
+
+/* SUCCESS */
+#toast.success {
+background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+/* ERROR */
+#toast.error {
+background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+/* ===============================
+SUMMARY
+================================ */
+.summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+.summary hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 12px 0;
+}
+.total {
+font-size: 18px;
+font-weight: bold;
+}
+
+/* ===============================
+BUTTON
+================================ */
+.pay-btn {
+width: 100%;
+padding: 14px;
+background: black;
+color: white;
+border: none;
+border-radius: 10px;
+margin-top: 20px;
+cursor: pointer;
+}
+
+/* ===============================
+HOVER EFFECTS
+================================ */
+.checkout-item:hover {
+background: #fafafa;
+border-radius: 8px;
+}
+
+/* ===============================
+RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+.checkout-container {
+flex-direction: column;
+}
+}
